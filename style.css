@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+header p {
+    margin: 10px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.content {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blurred-border {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.blurred-border:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.projects, .articles, .wishlist, .apple, .places {
+    margin-bottom: 40px;
+}
+
+.projects, .wishlist {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project, .wish {
+    flex: 1 1 calc(25% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.project img, .wish img {
+    width: 100%;
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.articles .article {
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.apple-container {
+    display: flex;
+    align-items: center;
+}
+
+.apple img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.apple .description {
+    transition: opacity 0.5s;
+}
+
+.apple .description.hidden {
+    opacity: 0;
+}
+
+.apple .extra-info {
+    display: none;
+    transition: opacity 0.5s;
+}
+
+.apple .description.hidden + .extra-info {
+    display: block;
+    opacity: 1;
+}
+
+.places img {
+    width: 150px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.places p {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin-top: 40px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
