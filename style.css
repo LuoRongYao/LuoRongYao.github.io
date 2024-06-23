@@ -143,3 +143,123 @@ header p {
 .fade-in {
     animation: fadeIn 2s ease-in-out;
 }
+
+/* style.css */
+
+/* 移除body的最大宽度和固定margin/padding */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 调整header的样式 */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+header h1, header p {
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px #aaa;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+/* 调整profile-nav的位置 */
+.profile-nav {
+    position: fixed;
+    top: 30%;
+    right: 20px; /* 调整到右侧 */
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* content的通用样式 */
+.content {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* blurred-border的通用样式 */
+.blurred-border {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.blurred-border:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* 通用动画样式 */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* 调整singers-container和singer的样式 */
+.singers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.singer {
+    flex: 1 1 calc(50% - 10px); /* 每个歌手占据一半宽度，并留有适当的间距 */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.singer img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* 调整footer的样式 */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin-top: 20px; /* 调整margin-top */
+}
+
