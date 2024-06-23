@@ -83,7 +83,7 @@ body {
 
 
 .profile-card_header {
-  background-image: url(../img/2.jpg);
+  background-image: url(../2.jpg);
   background-size: contain;
    width: 500px;
   margin-left: 340px;
@@ -501,11 +501,11 @@ a:hover {
 }
 
 .card--1 .card__img, .card--1 .card__img--hover {
-    background-image: url(../img/2.jpg);
+    background-image: url(../2.jpg);
 }
 
 .card--2 .card__img, .card--2 .card__img--hover {
-    background-image: url(../img/3.jpg);
+    background-image: url(../3.jpg);
 	
 }
 
