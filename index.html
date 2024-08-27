@@ -1740,6 +1740,72 @@
 		    color: #aaa;
 		    font-style: italic;
 		}
+		.food-title,
+        .drink-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            text-align: center;
+            color: #FF6B6B;
+            margin: 30px 0;
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        .food-title::before,
+        .drink-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .food-title i,
+        .drink-title i {
+            margin-right: 10px;
+            font-size: 0.8em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
@@ -2245,34 +2311,33 @@
 
     
      
-    <div id="travel-diary" class="content blurred-border">
-            <button class="title-button" aria-label="我的小屋" style="margin-bottom: 40px;">
-            	        	            <span><i class="fa-solid fa-bolt"></i> 旅行日记</span>
-            	        	            <div class="line1"></div>
-            	        	            <div class="line2"></div>
-            	        	            <div class="glow"></div>
-            	        	            <div class="super-glow"></div>
-            	        	    </button>
-            <div class="apple-container" style="display: flex; align-items: center; gap: 20px;justify-content: center;">
-                <img src="./157.png" data-aos="fade-up" alt="Ap" style="width: 200px; height: 250px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <img src="./158.jpg" data-aos="fade-up" alt="Apple" style="width: 200px; height: 250px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                
-            </div>
-			<div class="description" data-aos="fade-up" style="flex: 1; padding: 10px;">
-			    我想去的地方就算一个人我也会出发，我一个人也走了很远的路。
-				
-			</div>
-			<span style="color: #2196F3;">如果没人记录，我也会将镜头对准自己。</span>
-				
-			<div class="description" data-aos="fade-up" style="flex: 1; padding: 10px;color: hotpink;font-size: 25px;">
-			    ღ吃吃吃ღ
-			</div>
-			<img src="./1008.jpg" style="width: 60%;" />
-			<div class="description" data-aos="fade-up" style="flex: 1; padding: 10px;color: hotpink;font-size: 25px;">
-			    ღ喝喝喝ღ
-			</div>
-			<img src="./210.jpg" style="width: 60%;" />
-        </div>
+        <div id="travel-diary" class="content blurred-border">
+    <button class="title-button" aria-label="我的小屋" style="margin-bottom: 40px;">
+        <span><i class="fa-solid fa-bolt"></i> 旅行日记</span>
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="glow"></div>
+        <div class="super-glow"></div>
+    </button>
+    <div class="apple-container" style="display: flex; align-items: center; gap: 20px;justify-content: center;">
+        <img src="./157.png" data-aos="fade-up" alt="Ap" style="width: 200px; height: 250px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <img src="./158.jpg" data-aos="fade-up" alt="Apple" style="width: 200px; height: 250px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    </div>
+    <div class="description" data-aos="fade-up" style="flex: 1; padding: 10px;">
+        我想去的地方就算一个人我也会出发，我一个人也走了很远的路。
+    </div>
+    <span style="color: #2196F3;">如果没人记录，我也会将镜头对准自己。</span>
+
+    <div class="description" data-aos="fade-up" style="flex: 1; padding: 10px;">
+        <h2 class="food-title"><i class="fas fa-utensils"></i>吃吃吃<i class="fas fa-hamburger"></i></h2>
+    </div>
+    <img src="./1008.jpg" style="width: 60%;" />
+
+    <div class="description" data-aos="fade-up" style="flex: 1; padding: 10px;">
+        <h2 class="drink-title"><i class="fas fa-glass-cheers"></i>喝喝喝<i class="fas fa-coffee"></i></h2>
+    </div>
+    <img src="./210.jpg" style="width: 60%;" />
+</div>
     
         <hr>
         
@@ -2306,7 +2371,18 @@
 	
 	
     <script>
-	    document.addEventListener('click', function(event) {
+           // 添加随机颜色变化效果
+        function changeColor() {
+            const titles = document.querySelectorAll('.food-title, .drink-title');
+            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#F7A072', '#E4C988'];
+            titles.forEach(title => {
+                title.style.color = colors[Math.floor(Math.random() * colors.length)];
+            });
+        }
+
+        setInterval(changeColor, 3000);
+
+		   document.addEventListener('click', function(event) {
     var navbar = document.getElementById('sideNav');
     if (!navbar.contains(event.target) && !event.target.closest('.toggle-btn')) {
         navbar.classList.remove('open');
@@ -2318,7 +2394,6 @@
         toggleText.textContent = '导航';
     }
 });
-		
 		
 		    function toggleNav() {
 		        const sideNav = document.getElementById('sideNav');
