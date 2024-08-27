@@ -2306,6 +2306,18 @@
 	
 	
     <script>
+	    document.addEventListener('click', function(event) {
+    var navbar = document.getElementById('sideNav');
+    if (!navbar.contains(event.target) && !event.target.closest('.toggle-btn')) {
+        navbar.classList.remove('open');
+        const toggleBtn = document.querySelector('.toggle-btn');
+        const toggleIcon = toggleBtn.querySelector('i');
+        const toggleText = toggleBtn.querySelector('span');
+        toggleBtn.style.left = '20px';
+        toggleIcon.className = 'fas fa-bars';
+        toggleText.textContent = '导航';
+    }
+});
 		
 		
 		    function toggleNav() {
