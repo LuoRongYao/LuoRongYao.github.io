@@ -1962,18 +1962,22 @@
         }
 
         .thumbnail-container {
-
-margin-top: -20px;
-              margin-left: -620px;
-            width: 15.4%;
-       
             display: flex;
-            flex-direction: row;
-gap: 4px;
-            padding: 6px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
+            flex-direction: column;
+            width: 8%;
+            height: 250px; /* 固定高度 */
+            position: absolute;
+            top: 45px;
+            right: 8px;
+            background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+            border-radius: 10px; /* 圆角 */
+            overflow-y: auto; /* 允许垂直溢出并添加滚动条 */
         }
+		.thumbnail-container:hover {
+			transform: scale(1.35); /* 鼠标滑过时放大 */
+			
+			
+		}
 
         .thumbnail {
             width: 70px;
@@ -1981,12 +1985,14 @@ gap: 4px;
             object-fit: cover;
             cursor: pointer;
             border-radius: 10px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; /* 过渡效果 */
+            margin-bottom: 10px; /* 底部间距 */
         }
-
+        
         .thumbnail:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transform: scale(2.05); /* 鼠标滑过时放大 */
+            
+			border: 1px solid #03a9f4;
         }
 
         .thumbnail.active {
@@ -2367,23 +2373,23 @@ gap: 4px;
         <div class="main-image-container">
             <div style="position: relative; width: 100%; height: auto;">
                 <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="main-image">
-
+                <div class="thumbnail-container">
+                            <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
+                            <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
+                            <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
+                            <img data-aos="fade-up" src="./63.jpg" alt="幸福时刻4" class="thumbnail">
+                            <img data-aos="fade-up" src="./64.jpg" alt="幸福时刻5" class="thumbnail">
+                            <img data-aos="fade-up" src="./56.jpg" alt="幸福时刻6" class="thumbnail">
+                            <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
+                            <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
+                        </div>         
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
                     <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
                     <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px;color: white;"></i>
                 </div>
             </div>
         </div>
-        <div class="thumbnail-container">
-                    <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
-                    <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
-                    <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
-                    <img data-aos="fade-up" src="./63.jpg" alt="幸福时刻4" class="thumbnail">
-                    <img data-aos="fade-up" src="./64.jpg" alt="幸福时刻5" class="thumbnail">
-                    <img data-aos="fade-up" src="./56.jpg" alt="幸福时刻6" class="thumbnail">
-                    <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
-                    <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
-                </div>
+        
         <p class="description">这里我一定会再去一次，太美了！<i class="fa-regular fa-face-kiss-wink-heart fa-bounce" style="color: forestgreen;"></i></p>
     </div>
     <button class="show-all-images">
@@ -2795,6 +2801,8 @@ gap: 4px;
 
 
     <script>
+		
+		
 
        document.addEventListener('DOMContentLoaded', function() {
            const videos = document.querySelectorAll('.video-container video');
@@ -2824,31 +2832,53 @@ gap: 4px;
        });
 
 		document.addEventListener('DOMContentLoaded', function() {
-		        const mainImage = document.querySelector('.main-image');
-		        const thumbnails = document.querySelectorAll('.thumbnail');
-		        const showAllImagesButton = document.querySelector('.show-all-images');
-		        const allImagesContainer = document.querySelector('.all-images-container');
-
-		        thumbnails.forEach(thumb => {
-		            thumb.addEventListener('click', function() {
-		                mainImage.src = this.src;
-		                mainImage.alt = this.alt;
-		                thumbnails.forEach(t => t.classList.remove('active'));
-		                this.classList.add('active');
-		            });
-		        });
-
-		        showAllImagesButton.addEventListener('click', function() {
-		            if (allImagesContainer.style.display === 'none' || allImagesContainer.style.display === '') {
-		                allImagesContainer.style.display = 'flex';
-		                this.innerHTML = '<i class="fa-solid fa-angles-up fa-bounce"></i> ';
-		            } else {
-		                allImagesContainer.style.display = 'none';
-		                this.innerHTML = '<i class="fa-solid fa-angles-down fa-bounce"></i> ';
-		            }
+		    const mainImage = document.querySelector('.main-image');
+		    const thumbnails = document.querySelectorAll('.thumbnail');
+		    const showAllImagesButton = document.querySelector('.show-all-images');
+		    const allImagesContainer = document.querySelector('.all-images-container');
+		
+		    thumbnails.forEach(thumb => {
+		        thumb.addEventListener('click', function() {
+		            mainImage.src = this.src;
+		            mainImage.alt = this.alt;
+		            thumbnails.forEach(t => t.classList.remove('active'));
+		            this.classList.add('active');
+		            centerMainImage();
 		        });
 		    });
-
+		
+		    showAllImagesButton.addEventListener('click', function() {
+		        if (allImagesContainer.style.display === 'none' || allImagesContainer.style.display === '') {
+		            allImagesContainer.style.display = 'flex';
+		            this.innerHTML = '<i class="fa-solid fa-angles-up fa-bounce"></i> ';
+		        } else {
+		            allImagesContainer.style.display = 'none';
+		            this.innerHTML = '<i class="fa-solid fa-angles-down fa-bounce"></i> ';
+		        }
+		    });
+		
+		    function centerMainImage() {
+		        const mainImageContainer = document.querySelector('.main-image-container');
+		        const mainImage = document.querySelector('.main-image');
+		        const containerWidth = mainImageContainer.clientWidth;
+		        const containerHeight = mainImageContainer.clientHeight;
+		        const imageWidth = mainImage.naturalWidth;
+		        const imageHeight = mainImage.naturalHeight;
+		
+		        let scale = 1;
+		        if (imageWidth > containerWidth || imageHeight > containerHeight) {
+		            const scaleX = containerWidth / imageWidth;
+		            const scaleY = containerHeight / imageHeight;
+		            scale = Math.min(scaleX, scaleY);
+		        }
+		
+		        mainImage.style.width = `${imageWidth * scale}px`;
+		        mainImage.style.height = `${imageHeight * scale}px`;
+		        mainImage.style.marginLeft = `${(containerWidth - (imageWidth * scale)) / 2}px`;
+		        mainImage.style.marginTop = `${(containerHeight - (imageHeight * scale)) / 2}px`;
+		    }
+		});
+		
 		document.getElementById('ask-button').addEventListener('click', function() {
 		    const inputValue = document.getElementById('password-input').value;
 		    if (inputValue.includes('密码') || inputValue.includes('password')) {
@@ -3592,63 +3622,63 @@ setInterval(draw, 1);
 		    profileNav.style.pointerEvents = 'none';
 		});
 
-		document.querySelector('.apple img').addEventListener('click', () => {
-		    document.querySelector('.description').classList.toggle('hidden');
-		    document.querySelector('.extra-info').classList.toggle('hidden');
+文档。查询选择器(。苹果img ').addEventListener(点击, () => {
+文档。查询选择器(。'描述').优等生名单.套索扣(“隐藏”);
+文档。查询选择器(。“额外信息”).优等生名单.套索扣(“隐藏”);
 		});
 
-		const animatedImages = document.querySelectorAll('.animated-image');
-		animatedImages.forEach(image => {
-		    image.addEventListener('mouseover', () => {
-		        image.classList.add('animate__pulse');
+		常数 动画图像=文档。querySelectorAll(。'动画图像');
+动画图像。为每一个(图像 => {
+形象。addEventListener(“鼠标悬停”, () => {
+形象。优等生名单.增加(动画_ _脉冲');
 		    });
-		    image.addEventListener('animationend', () => {
-		        image.classList.remove('animate__pulse');
+形象。addEventListener(动画结尾, () => {
+形象。优等生名单.去除(动画_ _脉冲');
 		    });
 		});
 
-		document.addEventListener('DOMContentLoaded', function() {
-		  const searchButton = document.querySelector('.search-button');
-		  const searchMessage = document.querySelector('.search-message');
+文档。addEventListener(' DOMContentLoaded ', 功能() {
+		  常数 搜索按钮=文档。查询选择器(。'搜索按钮');
+		  常数 搜索消息=文档。查询选择器(。'搜索-消息');
 
-		  searchButton.addEventListener('click', function() {
-		    searchMessage.style.display = 'block';
+搜索按钮。addEventListener(点击, 功能() {
+搜索消息。风格.显示 = '阻止';
 		  });
 		});
-		gsap.from(".content", {
-		    duration: 1.5,
-		    opacity: 0,
+gsap。从(".内容", {
+		    期间: 1.5,
+		    不透明: 0,
 		    y: 50,
-		    ease: "power3.out"
+		    缓解: " power3.out "
 		});
 
-		gsap.from(".happy-moments img", {
-		    duration: 1,
-		    opacity: 0,
-		    scale: 0.5,
-		    stagger: 0.5,
-		    ease: "back.out(1.7)"
+gsap。从(".快乐时光img”, {
+		    期间: 1,
+		    不透明: 0,
+		    规模: 0.5,
+		    犹豫: 0.5,
+		    缓解: " back.out(1.7)"
 		});
 
-		gsap.from(".happy-moments p", {
-		    duration: 1,
-		    opacity: 0,
+gsap。从(".快乐时光p ", {
+		    期间: 1,
+		    不透明: 0,
 		    y: 20,
-		    stagger: 0.5,
-		    ease: "power3.out"
+		    犹豫: 0.5,
+		    缓解: " power3.out "
 		});
 
-		AOS.init();
-		gsap.from(".content", {
-		    duration: 1.5,
-		    opacity: 0,
+AOS。初始化();
+gsap。从(".内容", {
+		    期间: 1.5,
+		    不透明: 0,
 		    y: 50,
-		    ease: "power3.out"
+		    缓解: " power3.out "
 		});
 
 
 
 
-    </script>
+    </脚本>
 </body>
-</html>
+    </html>
