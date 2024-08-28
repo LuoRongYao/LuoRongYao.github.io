@@ -4,6 +4,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -996,7 +997,7 @@
 
 		}
 
-		
+
 		.audio-controlsf button {
 		    background-color: #393939;
 		    color: #fff;
@@ -1005,11 +1006,11 @@
 		    border-radius: 10px;
 			font-size: 12px;
 			width: 90px;
-		
+
 		    display: block; /* 确保按钮在一行显示 */
 		    margin: 10px 0; /* 调整按钮之间的间距 */
 		}
-      
+
 
 		.login-message {
 		            font-size: 14px;
@@ -1506,7 +1507,7 @@
 		    --not-i: calc(1 - var(--i));
 		    --j: var(--press, 0);
 		    --not-j: calc(1 - var(--j));
-		    
+
 		    border: none;
 		    width: auto;
 		    border-radius: 0;
@@ -1518,7 +1519,7 @@
 		        inset calc(var(--j)*-0.25em) calc(var(--j)*-0.25em) 0.5em rgba(252, 252, 252, var(--j));
 		    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 		    background-size: 400%;
-		    
+
 		    transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.2, 4, 1, 3);
 		    cursor: pointer;
 		    color: #fff;
@@ -1803,7 +1804,7 @@
             animation: bounce 2s infinite;
         }
 
-        
+
 
         img {
             display: block;
@@ -1925,7 +1926,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
     border: 1px solid white; /* 框线的颜色和宽度 */
     border-radius: 50%; /* 使框线变为圆形 */
     background-color: #4AC7FF; /* 背景颜色，确保图标可见 */
@@ -1961,7 +1962,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-           
+
             padding: 1px;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
@@ -2001,7 +2002,7 @@
             cursor: pointer;
 			width: 100px;
             background-color: white;
-			
+
             color: black;
             padding: 10px 20px;
             border-radius: 25px;
@@ -2025,7 +2026,7 @@
         }
 
         .all-images-container img {
-            
+
             object-fit: cover;
             border-radius: 15px;
             transition: all 0.3s ease;
@@ -2341,39 +2342,43 @@
 </div>
 
 	<div id="tourist-photos" class="content blurred-border">
-	        <button class="title-button" aria-label="我的小屋">
-	            <span><i class="fa-solid fa-bolt"></i> 游客照</span>
-	        </button>
-	        <div class="happy-moments" style="margin-top: 40px;">
-	            <div class="main-image-container">
-	                <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="main-image">
-	                <div class="thumbnail-container">
-	                    <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
-	                    <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
-	                    <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
-	                    <img data-aos="fade-up" src="./63.jpg" alt="幸福时刻4" class="thumbnail">
-	                    <img data-aos="fade-up" src="./64.jpg" alt="幸福时刻5" class="thumbnail">
-	                    <img data-aos="fade-up" src="./56.jpg" alt="幸福时刻6" class="thumbnail">
-	                    <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
-	                    <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
-	                </div>
-	            </div>
-	            <p class="description">这里我一定会再去一次，太美了！<i class="fa-regular fa-face-kiss-wink-heart fa-bounce" style="color: forestgreen;"></i></p>
-	        </div>
-	        <button class="show-all-images">
-	            <i class="fa-solid fa-angles-down fa-bounce" style="color: black;"></i> 
-	        </button>
-	        <div class="all-images-container">
-	            <img src="./31.jpg" alt="幸福时刻1">
-	            <img src="./52.jpg" alt="幸福时刻2">
-	            <img src="./17.jpg" alt="幸福时刻3">
-	            <img src="./63.jpg" alt="幸福时刻4">
-	            <img src="./64.jpg" alt="幸福时刻5">
-	            <img src="./56.jpg" alt="幸福时刻6">
-	            <img src="./62.jpg" alt="幸福时刻7">
-	            <img src="./55.jpg" alt="幸福时刻8">
-	        </div>
-	    </div>
+    <button class="title-button" aria-label="我的小屋">
+        <span><i class="fa-solid fa-bolt"></i> 游客照</span>
+    </button>
+    <div class="happy-moments" style="margin-top: 40px;">
+        <div class="main-image-container">
+            <div style="position: relative; width: 100%; height: auto;">
+                <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="main-image">
+                <div class="thumbnail-container">
+                    <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
+                    <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
+                    <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
+                    <img data-aos="fade-up" src="./63.jpg" alt="幸福时刻4" class="thumbnail">
+                    <img data-aos="fade-up" src="./64.jpg" alt="幸福时刻5" class="thumbnail">
+                    <img data-aos="fade-up" src="./56.jpg" alt="幸福时刻6" class="thumbnail">
+                    <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
+                    <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
+                </div>
+                <img src="./3.jpg" alt="左上角图片" style="position: absolute; top: 10px; left: 10px; z-index: 10; width: 25px; height: 25px; border-radius: 50%;">
+            </div>
+        </div>
+        <p class="description">这里我一定会再去一次，太美了！<i class="fa-regular fa-face-kiss-wink-heart fa-bounce" style="color: forestgreen;"></i></p>
+    </div>
+    <button class="show-all-images">
+        <i class="fa-solid fa-angles-down fa-bounce" style="color: black;"></i>
+    </button>
+    <div class="all-images-container">
+        <img src="./1010.jpg" alt="幸福时刻1">
+        <img src="./31.jpg" alt="幸福时刻1">
+        <img src="./52.jpg" alt="幸福时刻2">
+        <img src="./17.jpg" alt="幸福时刻3">
+        <img src="./63.jpg" alt="幸福时刻4">
+        <img src="./64.jpg" alt="幸福时刻5">
+        <img src="./56.jpg" alt="幸福时刻6">
+        <img src="./62.jpg" alt="幸福时刻7">
+        <img src="./55.jpg" alt="幸福时刻8">
+    </div>
+</div>
 
 
 
@@ -2489,7 +2494,7 @@
 	    </div>
 	    <div id="secret-message" style="display: none;">
 			<span  style="
-			   
+
 			    color: #333;
 			    font-style: italic;
 			    font-size: 18px;
@@ -2498,14 +2503,14 @@
 			    margin-top: 20px;
 			    background-color: #f9f9f9;
 			    border-left: 5px solid skyblue;
-			   
+
 			    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 			    transition: all 0.3s ease;
 			">前言：如果你已经有密码了，说明你对我来说很重要，她是谁已经没有意义了。如果你猜对了，说明你很了解我。如果你蒙对了，说明你运气真好，你应该去买彩票   <i class="fa-regular fa-face-grin-squint-tears"></i></span>
 			<p  style="
-			   
+
 			    color: #333;
-			    
+
 			    font-size: 18px;
 			    line-height: 1.6;
 			    text-align: justify;
@@ -2516,8 +2521,8 @@
 			    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 			    transition: all 0.3s ease;
 			">
-			    
-				
+
+
 			    其实她并不算漂亮，我也不知道为什么当时的我会喜欢她，可能是因为她足够神秘吧，总让人想主动去了解她，总会好奇她在哪，在干嘛。不过放在此刻都已经不重要了，希望她一切都好。<span style="color: white;background-color: forestgreen;">"我清楚的看见你"更像是迟到的"交代"，给高中的我自己。</span>
 			</p>
 		</div>
@@ -2734,13 +2739,13 @@
 
 
     <script>
-		
+
 		document.addEventListener('DOMContentLoaded', function() {
 		        const mainImage = document.querySelector('.main-image');
 		        const thumbnails = document.querySelectorAll('.thumbnail');
 		        const showAllImagesButton = document.querySelector('.show-all-images');
 		        const allImagesContainer = document.querySelector('.all-images-container');
-		
+
 		        thumbnails.forEach(thumb => {
 		            thumb.addEventListener('click', function() {
 		                mainImage.src = this.src;
@@ -2749,7 +2754,7 @@
 		                this.classList.add('active');
 		            });
 		        });
-		
+
 		        showAllImagesButton.addEventListener('click', function() {
 		            if (allImagesContainer.style.display === 'none' || allImagesContainer.style.display === '') {
 		                allImagesContainer.style.display = 'flex';
@@ -2760,7 +2765,7 @@
 		            }
 		        });
 		    });
-		
+
 		document.getElementById('ask-button').addEventListener('click', function() {
 		    const inputValue = document.getElementById('password-input').value;
 		    if (inputValue.includes('密码') || inputValue.includes('password')) {
@@ -2772,8 +2777,8 @@
 		        alert('我不知道！');
 		    }
 		});
-		
-		
+
+
            // 添加随机颜色变化效果
         function changeColor() {
             const titles = document.querySelectorAll('.food-title, .drink-title');
@@ -2817,28 +2822,32 @@
 		    }
 
 
-		var plane=document.getElementById('plane');
-		var deg=0,ex=0,ey=0,vx=0,vy=0,count=0;
-		window.addEventListener('mousemove',(e)=>{
-		    ex=e.pageX-plane.offsetLeft-plane.clientWidth/2;
-		    ey=e.pageY-plane.offsetTop-plane.clientHeight/2;
-		    deg=360*Math.atan(ey/ex)/(2*Math.PI)+5;
-		    if(ex<0){
-		        deg+=180;
-		    }
-		    count=0;
-		})
-		function draw(){
-		    plane.style.transform='rotate('+deg+'deg)';
-		    if(count<100){
-		        vx+=ex/100;
-		        vy+=ey/100;
-		    }
-		    plane.style.left=vx+'px';
-		    plane.style.top=vy+'px';
-		    count++;
-		}
-		setInterval(draw,1);
+		var plane = document.getElementById('plane');
+var deg = 0, ex = 0, ey = 0, vx = 0, vy = 0, count = 0;
+var offset = 20; // 设置偏移量
+
+window.addEventListener('mousemove', (e) => {
+    ex = e.pageX - plane.offsetLeft - plane.clientWidth / 2;
+    ey = e.pageY - plane.offsetTop - plane.clientHeight / 2;
+    deg = 360 * Math.atan(ey / ex) / (2 * Math.PI) + 5;
+    if (ex < 0) {
+        deg += 180;
+    }
+    count = 0;
+});
+
+function draw() {
+    plane.style.transform = 'rotate(' + deg + 'deg)';
+    if (count < 100) {
+        vx += (ex - offset) / 100; // 引入偏移量
+        vy += (ey - offset) / 100; // 引入偏移量
+    }
+    plane.style.left = vx + 'px';
+    plane.style.top = vy + 'px';
+    count++;
+}
+
+setInterval(draw, 1);
 
 		function clickEffect() {
 		  let balls = [];
