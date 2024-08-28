@@ -2054,6 +2054,17 @@
         .thumbnail-container::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+        .video-container {
+    position: relative;
+    display: inline-block; /* 确保容器与视频大小一致 */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 10px; /* 调整位置 */
+    left: 10px; /* 调整位置 */
+    z-index: 10; /* 确保图片在视频上方 */
+}
 
     </style>
 </head>
@@ -2360,7 +2371,7 @@
                     <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
                 </div>
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
-                    <img src="./3.jpg" alt="左上角图片" style="width: 40px; height: 40px; border-radius: 50%;">
+                    <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
                     <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 4px; right: 2px; font-size: 10px;color： #4AC7FF；"></i>
                 </div>
             </div>
@@ -2394,41 +2405,65 @@
     	        	            <div class="super-glow"></div>
     	        	    </button>
     <div style="margin-top: -10px;" class="happy-moments">
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1000.png">
-            <source src="./22.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1000.png">
+        <source src="./22.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1002.png">
+        <source src="./91.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1003.png">
+        <source src="./92.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
 
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1002.jpg">
-            <source src="./91.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1001.jpg">
+        <source src="./93.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
 
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1003.png">
-            <source src="./92.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1006.png">
+        <source src="./80.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1004.png">
+        <source src="./23.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1005.png">
+        <source src="./25.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
+        <div class="video-container">
+    <video data-aos="fade-up" width="640" height="360" controls poster="./1007.png">
+        <source src="./81.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+</div>
 
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1001.jpg">
-            <source src="./93.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1006.png">
-            <source src="./80.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1004.png">
-            <source src="./23.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1005.png">
-            <source src="./25.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video data-aos="fade-up" width="640" height="360" controls poster="./1007.png">
-            <source src="./81.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
     </div>
 </div>
 
@@ -2742,6 +2777,22 @@
 
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.video-container video');
+
+    videos.forEach(video => {
+        const overlay = video.parentElement.querySelector('.video-overlay');
+
+        video.addEventListener('play', function() {
+            overlay.style.display = 'none';
+        });
+
+        video.addEventListener('pause', function() {
+            overlay.style.display = 'block';
+        });
+    });
+});
 
 		document.addEventListener('DOMContentLoaded', function() {
 		        const mainImage = document.querySelector('.main-image');
