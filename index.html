@@ -304,11 +304,9 @@
                     text-align: center;
                 }
         .happy-moments {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 5px; /* 调整视频之间的间距 */
-         }
+            margin-top: 40px;
+        }
+        
         video {
                     max-width: 100%;
                     height: auto;
@@ -1990,11 +1988,11 @@ z-index: 10;
 }
 
  .main-image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
+     position: relative;
+     overflow: hidden;
+     border-radius: 20px;
+     margin-bottom: 15px;
+ }
 
         .main-image {
             width: 100%;
@@ -2003,27 +2001,27 @@ z-index: 10;
             border-radius: 25px;
             transition: transform 0.3s ease;
         }
+        
 
         .main-image:hover {
-            transform: scale(1.05);
+            
         }
 
         .thumbnail-container {
             display: flex;
             flex-direction: column;
             width: 8%;
-            height: 250px; /* 固定高度 */
+            height: 250px;
             position: absolute;
             top: 45px;
             right: 8px;
-            background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
-            border-radius: 10px; /* 圆角 */
-            overflow-y: auto; /* 允许垂直溢出并添加滚动条 */
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
         }
 		.thumbnail-container:hover {
-			transform: scale(1.35); /* 鼠标滑过时放大 */
-			
-			
+		    
 		}
 
         .thumbnail {
@@ -2032,21 +2030,20 @@ z-index: 10;
             object-fit: cover;
             cursor: pointer;
             border-radius: 10px;
-            transition: all 0.3s ease; /* 过渡效果 */
-            margin-bottom: 10px; /* 底部间距 */
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
         
         .thumbnail:hover {
-            transform: scale(2.05); /* 鼠标滑过时放大 */
-            
-			border: 1px solid #03a9f4;
+            transform: scale(2.05);
+            border: 2px solid yellow;
         }
-
+        
         .thumbnail.active {
             border: 2px solid #03a9f4;
             box-shadow: 0 0 10px #03a9f4;
         }
-
+        
         .description {
             font-size: 16px;
             font-family: 'MaoBiTi', 'SimSun', serif;
@@ -2054,7 +2051,6 @@ z-index: 10;
             margin-bottom: 20px;
             text-align: center;
         }
-
         .show-all-images {
             display: block;
             margin: 20px auto 0;
@@ -2097,23 +2093,35 @@ z-index: 10;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
 
-        /* Scrollbar Styles */
-        .thumbnail-container::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .thumbnail-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .thumbnail-container::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 5px;
-        }
-
-        .thumbnail-container::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
+       .thumbnail-container::-webkit-scrollbar {
+           width: 5px;
+       }
+       
+       .thumbnail-container::-webkit-scrollbar-track {
+           background: #f1f1f1;
+       }
+       
+       .thumbnail-container::-webkit-scrollbar-thumb {
+           background: #888;
+           border-radius: 5px;
+       }
+       
+       .thumbnail-container::-webkit-scrollbar-thumb:hover {
+           background: #555;
+       }
+       
+       @media (max-width: 768px) {
+           .thumbnail-container {
+               width: 15%;
+               height: 200px;
+               right: 5px;
+           }
+       
+           .thumbnail {
+               width: 50px;
+               height: 50px;
+           }
+       }
         .video-container {
     position: relative;
     display: inline-block; /* 确保容器与视频大小一致 */
@@ -2200,49 +2208,49 @@ z-index: 10;
         }
 		
 		.di {
-		    
-		    width: 300px;
-		    height: 400px;
-		    overflow: scroll;
-		    border-radius: 10px;
-		    margin-left: 340px;
-			
-		    transition: all 0.3s ease;
-			margin-top: -400px;
-		}
-		
-		.di:hover {
-		    transform: scale(1.05);
-		    
-		    
-			width: auto;
-			height: auto;
-			overflow: scroll;
-			margin-bottom: 200px;
-		}
-		
-		
-		.er {
-		    
-		    width: 300px;
-		    height: 400px;
-		    overflow: scroll;
-		    border-radius: 10px;
-		    transition: all 0.3s ease;
-			margin-bottom: 10px;
-		    
-			
-		}
-		
-		.er:hover {
-		    transform: scale(1.05);
-		    
-		    
-			width: auto;
-			height: auto;
-			overflow: scroll;
-			
-		}
+				    
+				    width: 100px;
+				    height: 400px;
+				    overflow: scroll;
+				    border-radius: 10px;
+				    margin-left: 340px;
+					
+				    transition: all 0.3s ease;
+					margin-top: -415px;
+				}
+				
+				.di:hover {
+				    transform: scale(1.05);
+				    
+				    
+					width: auto;
+					height: auto;
+					overflow: scroll;
+					margin-bottom: 220px;
+				}
+				
+				
+				.er {
+				    margin-left: 200px;
+				    width: 100px;
+				    height: 400px;
+				    overflow: scroll;
+				    border-radius: 10px;
+				    transition: all 0.3s ease;
+					margin-bottom: 10px;
+				    
+					
+				}
+				
+				.er:hover {
+				    transform: scale(1.05);
+				    
+				    
+					width: auto;
+					height: auto;
+					overflow: scroll;
+					
+				}
 		
 		
         
@@ -2541,15 +2549,15 @@ z-index: 10;
             <div style="position: relative; width: 100%; height: auto;">
                 <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="main-image">
                 <div class="thumbnail-container">
-                            <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
-                            <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
-                            <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
-                            <img data-aos="fade-up" src="./63.jpg" alt="幸福时刻4" class="thumbnail">
-                            <img data-aos="fade-up" src="./64.jpg" alt="幸福时刻5" class="thumbnail">
-                            <img data-aos="fade-up" src="./56.jpg" alt="幸福时刻6" class="thumbnail">
-                            <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
-                            <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
-                        </div>         
+                    <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
+                    <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
+                    <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
+                    <img data-aos="fade-up" src="./63.jpg" alt="幸福时刻4" class="thumbnail">
+                    <img data-aos="fade-up" src="./64.jpg" alt="幸福时刻5" class="thumbnail">
+                    <img data-aos="fade-up" src="./56.jpg" alt="幸福时刻6" class="thumbnail">
+                    <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
+                    <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
+                </div>         
                 <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
                     <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
                     <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px;color: white;"></i>
@@ -3039,6 +3047,32 @@ z-index: 10;
 
 
     <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    const mainImage = document.querySelector('.main-image');
+		    const thumbnails = document.querySelectorAll('.thumbnail');
+		    const thumbnailContainer = document.querySelector('.thumbnail-container');
+		
+		    thumbnails.forEach(thumbnail => {
+		        thumbnail.addEventListener('click', function() {
+		            // 更新主图片
+		            mainImage.src = this.src;
+		            mainImage.alt = this.alt;
+		
+		            // 更新激活状态
+		            thumbnails.forEach(t => t.classList.remove('active'));
+		            this.classList.add('active');
+		
+		            // 将点击的缩略图滚动到中心位置
+		            const containerHeight = thumbnailContainer.offsetHeight;
+		            const thumbnailHeight = this.offsetHeight;
+		            const scrollPosition = this.offsetTop - (containerHeight / 2) + (thumbnailHeight / 2);
+		            thumbnailContainer.scrollTo({
+		                top: scrollPosition,
+		                behavior: 'smooth'
+		            });
+		        });
+		    });
+		});
 		
 		document.addEventListener('DOMContentLoaded', function() {
 		    // 获取所有类名为 'er' 和 'di' 的图片元素
