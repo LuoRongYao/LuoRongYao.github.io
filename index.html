@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="./2.ttf" as="font" type="font/ttf" crossorigin>
 
     <style>
         /* 使用 Flex 布局重新组织页面主体 */
@@ -299,11 +300,11 @@
                     text-align: center;
                 }
         .happy-moments {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 5px; /* 调整视频之间的间距 */
-         }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* 调整视频之间的间距 */
+}
         video {
                     max-width: 100%;
                     height: auto;
@@ -1954,19 +1955,12 @@
         }
 
         .thumbnail-container {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            bottom: 10px;
-            width: 80px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-
-            padding: 1px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* 调整缩略图之间的间距 */
+    margin-bottom: 20px; /* 调整与描述之间的间距 */
+}
 
         .thumbnail {
             width: 70px;
@@ -1988,12 +1982,9 @@
         }
 
         .description {
-            font-size: 16px;
-            font-family: 'MaoBiTi', 'SimSun', serif;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    text-align: center;
+    margin-top: 20px; /* 调整与缩略图之间的间距 */
+}
 
         .show-all-images {
             display: block;
