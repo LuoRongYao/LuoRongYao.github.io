@@ -2418,6 +2418,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
         <div class="video-container">
     <video data-aos="fade-up" width="640" height="360" controls poster="./1002.png">
@@ -2425,6 +2426,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
         <div class="video-container">
     <video data-aos="fade-up" width="640" height="360" controls poster="./1003.png">
@@ -2432,6 +2434,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
 
         <div class="video-container">
@@ -2440,6 +2443,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
 
         <div class="video-container">
@@ -2448,6 +2452,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
         <div class="video-container">
     <video data-aos="fade-up" width="640" height="360" controls poster="./1004.png">
@@ -2455,6 +2460,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
         <div class="video-container">
     <video data-aos="fade-up" width="640" height="360" controls poster="./1005.png">
@@ -2462,6 +2468,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
         <div class="video-container">
     <video data-aos="fade-up" width="640" height="360" controls poster="./1007.png">
@@ -2469,6 +2476,7 @@
         Your browser does not support the video tag.
     </video>
     <img src="./3.jpg" alt="左上角图片" class="video-overlay" style="width: 40px; height: 40px; border-radius: 50%;">
+            <i class="fa-regular fa-circle-dot fa-fade" style="position: absolute; top: 10px; right: 10px; font-size: 20px;display: none;"></i>
 </div>
 
     </div>
@@ -2784,6 +2792,26 @@
 
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.video-container video');
+
+    videos.forEach(video => {
+        video.addEventListener('play', function() {
+            const icon = video.parentElement.querySelector('.video-icon');
+            if (icon) {
+                icon.style.display = 'block';
+            }
+        });
+
+        video.addEventListener('pause', function() {
+            const icon = video.parentElement.querySelector('.video-icon');
+            if (icon) {
+                icon.style.display = 'none';
+            }
+        });
+    });
+});
 
         document.addEventListener('DOMContentLoaded', function() {
     const videos = document.querySelectorAll('.video-container video');
