@@ -139,9 +139,11 @@
         }
 
         .apple-container {
-            display: flex;
-            align-items: center;
-        }
+    overflow: hidden; /* 防止图片放大时溢出容器 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
         .apple img {
             width: 150px;
@@ -300,11 +302,11 @@
                     text-align: center;
                 }
         .happy-moments {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; /* 调整视频之间的间距 */
-}
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 5px; /* 调整视频之间的间距 */
+         }
         video {
                     max-width: 100%;
                     height: auto;
@@ -908,7 +910,11 @@
 		    border-radius: 10px;
 		    object-fit: cover;
 		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		    transition: transform 0.3s ease; /* 添加过渡效果 */
 		}
+		.apple-container img:hover {
+    transform: scale(1.1); /* 鼠标悬停时图片放大1.1倍 */
+}
 
 		/* 使用媒体查询调整布局 */
 		@media (max-width: 768px) {
@@ -1955,12 +1961,18 @@
         }
 
         .thumbnail-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* 调整缩略图之间的间距 */
-    margin-bottom: 20px; /* 调整与描述之间的间距 */
-}
+
+
+
+            width: 80px;
+
+            display: flex;
+            flex-direction: row;
+
+            padding: 1px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
 
         .thumbnail {
             width: 70px;
@@ -1982,9 +1994,12 @@
         }
 
         .description {
-    text-align: center;
-    margin-top: 20px; /* 调整与缩略图之间的间距 */
-}
+            font-size: 16px;
+            font-family: 'MaoBiTi', 'SimSun', serif;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
         .show-all-images {
             display: block;
@@ -2351,7 +2366,14 @@
         <div class="main-image-container">
             <div style="position: relative; width: 100%; height: auto;">
                 <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="main-image">
-                <div class="thumbnail-container">
+
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+                    <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+                    <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 4px; right: 2px; font-size: 10px;color： #4AC7FF；"></i>
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail-container">
                     <img data-aos="fade-up" src="./1010.jpg" alt="幸福时刻1" class="thumbnail active">
                     <img data-aos="fade-up" src="./52.jpg" alt="幸福时刻2" class="thumbnail">
                     <img data-aos="fade-up" src="./17.jpg" alt="幸福时刻3" class="thumbnail">
@@ -2361,12 +2383,6 @@
                     <img data-aos="fade-up" src="./62.jpg" alt="幸福时刻7" class="thumbnail">
                     <img data-aos="fade-up" src="./55.jpg" alt="幸福时刻8" class="thumbnail">
                 </div>
-                <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
-                    <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
-                    <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 4px; right: 2px; font-size: 10px;color： #4AC7FF；"></i>
-                </div>
-            </div>
-        </div>
         <p class="description">这里我一定会再去一次，太美了！<i class="fa-regular fa-face-kiss-wink-heart fa-bounce" style="color: forestgreen;"></i></p>
     </div>
     <button class="show-all-images">
