@@ -2660,11 +2660,15 @@ z-index: 10;
 		        Your browser does not support the video tag.
 		    </video>
 		    <div class="video-overlay">
+				
 				<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
+				
 				<div class="avatar-icont">
 				    <i class="fa-solid fa-bolt fa-fade"></i>
 				</div>
+				
 			</div>
+			
 		    <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
 		</div>
         <div class="video-container">
@@ -3528,7 +3532,7 @@ setInterval(draw, 1);
 		      }
 		      this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
 		      this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
-		      this.r = randBetween(8, 12) + 3 * Math.random();
+		      this.r = randBetween(2, 4) + 1 * Math.random(); // 缩小半径范围
 		      this.color = colours[Math.floor(Math.random() * colours.length)];
 		    }
 		    update() {
@@ -3536,7 +3540,7 @@ setInterval(draw, 1);
 		      this.y += this.vy - normal.y;
 		      normal.x = -2 / window.innerWidth * Math.sin(this.angle);
 		      normal.y = -2 / window.innerHeight * Math.cos(this.angle);
-		      this.r -= 0.3;
+		      this.r -= 0.2;
 		      this.vx *= 0.9;
 		      this.vy *= 0.9;
 		    }
