@@ -511,39 +511,7 @@
 
         }
 
-        .animated-image::before,
-        .animated-image::after,
-        .animated-image .ripple-1,
-        .animated-image .ripple-2,
-        .animated-image .ripple-3 {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border: 1px solid black;
-            border-radius: 50%;
-            box-sizing: border-box;
-            transform: translate(-50%, -50%);
-            animation: ripple 2s linear infinite;
-        }
-
-        .animated-image::after {
-            animation-delay: 0.5s;
-        }
-
-        .animated-image .ripple-1 {
-            animation-delay: 1s;
-        }
-
-        .animated-image .ripple-2 {
-            animation-delay: 1.5s;
-        }
-
-        .animated-image .ripple-3 {
-            animation-delay: 2s;
-        }
+       
 
         @keyframes ripple {
             0% {
@@ -1513,31 +1481,23 @@
 
 		}
 		.title-button {
-		    --i: var(--light, 0);
-		    --not-i: calc(1 - var(--i));
-		    --j: var(--press, 0);
-		    --not-j: calc(1 - var(--j));
+		    
 
 		    border: none;
 		    width: auto;
-		    border-radius: 0;
-		    transform: scale(calc(1 - var(--j)*.02));
-		    box-shadow:
-		        calc(var(--not-j)*-0.25em) calc(var(--not-j)*-0.25em) 0.5em rgba(252, 252, 252, var(--not-j)),
-		        calc(var(--not-j)*0.25em) calc(var(--not-j)*0.25em) 0.5em rgba(210, 218, 230, var(--not-j)),
-		        inset calc(var(--j)*0.25em) calc(var(--j)*0.25em) 0.5em rgba(210, 218, 230, var(--j)),
-		        inset calc(var(--j)*-0.25em) calc(var(--j)*-0.25em) 0.5em rgba(252, 252, 252, var(--j));
-		    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-		    background-size: 400%;
+		    
+		    
+		    
+		    
 
-		    transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.2, 4, 1, 3);
-		    cursor: pointer;
-		    color: #fff;
+		    
+		    
+		    color: royalblue;
 		    font-family: 'Orbitron', sans-serif;
 		    position: relative;
 		    overflow: hidden;
-		    text-shadow: 0 0 5px white, 0 0 5px white;
-		    animation: animate 8s linear infinite;
+		   
+		    
 		    transform: skew(-20deg);
 		}
 
@@ -1558,7 +1518,7 @@
 		    right: -5px;
 		    bottom: -5px;
 		    z-index: -1;
-		    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+		    
 		    background-size: 400%;
 		    border-radius: 0;
 		    opacity: 1;
@@ -1567,23 +1527,7 @@
 		    transform: skew(-20deg);
 		}
 
-		.line1,.line2 {
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    width: 100%;
-		    height: 100%;
-		    border: 2px solid white;
-		    transform: skew(-20deg);
-		}
-
-		.line1 {
-		    animation: move1 4s linear infinite;
-		}
-
-		.line2 {
-		    animation: move2 4s linear infinite;
-		}
+		
 
 		@keyframes move1 {
 		    0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 2px, 0 2px); }
@@ -1634,19 +1578,9 @@
 		    mix-blend-mode: screen;
 		}
 
-		.title-button:focus {
-		    outline: none;
-		}
+		
 
-		.title-button:hover,
-		.title-button:focus {
-		    --light: 1;
-		    animation: crack 0.5s ease-out;
-		}
-
-		.title-button:active {
-		    --press: 1;
-		}
+		
 
 		.title-button span {
 		    display: inline-block;
@@ -1662,9 +1596,7 @@
 		    100% { transform: skew(-20deg); }
 		}
 
-		.title-button:hover span {
-		    animation: glitch 0.5s ease-out infinite;
-		}
+		
 
 		@keyframes glitch {
 		    0% { transform: skew(20deg); }
@@ -2425,20 +2357,16 @@ z-index: 10;
         <h1 class="unique-typing-effect">小罗的树屋 from<span style="color: #2196F3;"> xianggugu<span></h1>
         <p class="maobi-text">出去玩是唯一重要的事！不拥有任何人，不依赖任何人。</p>
         <div class="social-links">
-            <a href="https://v.douyin.com/i6Nm1VTV/ 2@7.com :8pm">
+            <a href="https://v.douyin.com/iDqSyuhp/ 5@3.com :1pm">
                 <div class="animated-image">
                     <img src="./抖音.png" alt="WeChat">
-                    <div class="ripple-1"></div>
-                    <div class="ripple-2"></div>
-                    <div class="ripple-3"></div>
+                    
                 </div>
             </a>
             <a href="https://activity.kugou.com/all/v-a8209a90/index.html?gid=collection_100_873051182_127_0">
                 <div class="animated-image">
                     <img src="./酷狗音乐.png" alt="GitHub">
-                    <div class="ripple-1"></div>
-                    <div class="ripple-2"></div>
-                    <div class="ripple-3"></div>
+                    
                 </div>
             </a>
         </div>
@@ -2454,10 +2382,7 @@ z-index: 10;
 	<div id="treehouse" class="content blurred-border">
     <button class="title-button" aria-label="我的小屋" style="margin-bottom: 40px;">
         <span><i class="fa-solid fa-bolt"></i> 树洞</span>
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="glow"></div>
-        <div class="super-glow"></div>
+        
     </button>
 
     <div class="articles" style="display: flex; flex-direction: column; color: black; font-size: 13px;">
@@ -3079,7 +3004,7 @@ z-index: 10;
                     <img  src="./1010.jpg" alt="幸福时刻1" class="thumbnail">
                     <img  src="./52.jpg" alt="幸福时刻2" class="thumbnail">
                     <img  src="./17.jpg" alt="幸福时刻3" class="thumbnail">
-                    <img  src="./63.jpg" alt="幸福时刻4" class="thumbnail">
+                    
 					<img  src="./1022.jpg" alt="幸福时刻4" class="thumbnail">
                     <img  src="./64.jpg" alt="幸福时刻5" class="thumbnail">
                     
@@ -3108,7 +3033,7 @@ z-index: 10;
         <img src="./31.jpg" alt="幸福时刻1">
         <img src="./52.jpg" alt="幸福时刻2">
         <img src="./17.jpg" alt="幸福时刻3">
-        <img src="./63.jpg" alt="幸福时刻4">
+        
 		<img src="./1022.jpg" alt="幸福时刻8">
         <img src="./64.jpg" alt="幸福时刻5">
         
@@ -3126,91 +3051,7 @@ z-index: 10;
     	        	            <div class="glow"></div>
     	        	            <div class="super-glow"></div>
     	        	    </button>
-    <div style="margin-top: -10px;" class="happy-moments">
-		<div class="video-container">
-		    <video  width="640" height="360" controls poster="./1039.jpg">
-		        <source src="./1041.mp4" type="video/mp4">
-		        Your browser does not support the video tag.
-		    </video>
-		    <div class="video-overlay">
-		    	<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
-		    	<div class="avatar-icont">
-		    	    <i class="fa-solid fa-bolt fa-fade"></i>
-		    	</div>
-		    </div>
-		    <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-		</div>
-		
-		<div class="video-container">
-		    <video  width="640" height="360" controls poster="./1032.jpg">
-		        <source src="./95.mp4" type="video/mp4">
-		        Your browser does not support the video tag.
-		    </video>
-		    <div class="video-overlay">
-		    	<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
-		    	<div class="avatar-icont">
-		    	    <i class="fa-solid fa-bolt fa-fade"></i>
-		    	</div>
-		    </div>
-		    <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-		</div>
-		<div class="video-container">
-		    <video  width="640" height="360" controls poster="./1000.png">
-		        <source src="./22.mp4" type="video/mp4">
-		        Your browser does not support the video tag.
-		    </video>
-		    <div class="video-overlay">
-				
-				<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
-				
-				<div class="avatar-icont">
-				    <i class="fa-solid fa-bolt fa-fade"></i>
-				</div>
-				
-			</div>
-			
-		    <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-		</div>
-        <div class="video-container">
-            <video  width="640" height="360" controls poster="./1002.jpg">
-                <source src="./91.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-            	<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
-            	<div class="avatar-icont">
-            	    <i class="fa-solid fa-bolt fa-fade"></i>
-            	</div>
-            </div>
-            <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-        </div>
-        <div class="video-container">
-            <video  width="640" height="360" controls poster="./1003.png">
-                <source src="./92.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-            	<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
-            	<div class="avatar-icont">
-            	    <i class="fa-solid fa-bolt fa-fade"></i>
-            	</div>
-            </div>
-            <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-        </div>
-        <div class="video-container">
-            <video  width="640" height="360" controls poster="./1001.jpg">
-                <source src="./93.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay">
-            	<img src="./3.jpg" alt="左上角图片"  style="width: 40px; height: 40px; border-radius: 50%;">
-            	<div class="avatar-icont">
-            	    <i class="fa-solid fa-bolt fa-fade"></i>
-            	</div>
-            </div>
-            <i class="fa-regular fa-circle-dot fa-fade video-icon" style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-        </div>
-
+   
         
 
         
@@ -3218,8 +3059,9 @@ z-index: 10;
     
 	
 	<div>
-		<a href="https://www.alipan.com/s/ZYfV143isV4" class="icon-link">
-		    <span style="font-size: 16px; top: -60px;">往期视频</span> <i class="fa-regular fa-circle-right fa-beat-fade"></i>
+		<a href="https://v.douyin.com/iDqSyuhp/ 5@3.com :1pm" class="icon-link">
+		    <span style="font-size: 16px; top: -60px;">视频播放体验不好，决定把所有视频转到抖音平台更新。</span> 
+			<div><i class="fa-regular fa-circle-right fa-beat-fade"></i></div>
 		</a>
 	</div>
         
@@ -3521,42 +3363,35 @@ z-index: 10;
         	        	    </button>
         <div class="projects" style="display: flex; justify-content: space-between; gap: 20px;font-size: 14px;">
             <div   style="background-color: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); flex: 1;">
-                <img src="./4.jpg" alt="Movie 1"  style="width: 100%; border-radius: 10px;">
-                <h3  style="margin-top: 10px; text-align: center;">梅里雪山</h3>
-                <p  style="text-align: center;">这么美的日出，怎么能不去呢！</p>
-				<i class="fa-brands fa-get-pocket" style="color: #FFD43B;"></i>
+                <img src="./1032.webp" alt="Movie 1"  style="width: 100%; border-radius: 10px;">
+                <h3  style="margin-top: 10px; text-align: center;">九寨沟</h3>
+               
             </div>
             <div   style="background-color: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); flex: 1;">
-                <img src="./5.jpg" alt="Movie 2"  style="width: 100%; border-radius: 10px;">
-                <h3  style="margin-top: 10px; text-align: center;">赛里木湖</h3>
-                <p  style="text-align: center;">我也想亲眼看看大西洋的最后一滴眼泪。</p>
-				<i class="fa-brands fa-get-pocket" style="color: #FFD43B;"></i>
+                <img src="./1033.webp" alt="Movie 2"  style="width: 100%; border-radius: 10px;">
+                <h3  style="margin-top: 10px; text-align: center;">西安</h3>
+               
             </div>
             <div   style="background-color: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); flex: 1;">
-                <img src="./6.webp" alt="Movie 3"  style="width: 100%; border-radius: 10px;">
-                <h3  style="margin-top: 10px; text-align: center;">喀纳斯</h3>
-                <p  style="text-align: center;">国家地理看多了，希望它诚不欺我。</p>
-				<i class="fa-brands fa-get-pocket" style="color: #FFD43B;"></i>
+                <img src="./1034.webp" alt="Movie 3"  style="width: 100%; border-radius: 10px;">
+                <h3  style="margin-top: 10px; text-align: center;">青海</h3>
+                
             </div>
             <div   style="background-color: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); flex: 1;">
-                <img src="./7.webp" alt="Movie 4"  style="width: 100%; border-radius: 10px;">
-                <h3  style="margin-top: 10px; text-align: center;">那拉提草原</h3>
-                <p  style="text-align: center;">我心心念念的草原为什么在天津的时候没去看呢？可能当时脑子抽掉了！</p>
-				<i class="fa-brands fa-get-pocket" style="color: #FFD43B;"></i>
+                <img src="./1035.webp" alt="Movie 4"  style="width: 100%; border-radius: 10px;">
+                <h3  style="margin-top: 10px; text-align: center;">西藏</h3>
+                
             </div>
         </div>
-		<p  style="padding-left: 30px;">每次出发都承载着我太多的期待，我会慢慢一个一个实现它，我太爱这种从工作中抽离的感觉了，如果有那么一天我不再喜欢旅游，说明我真的老了。<i class="fa-brands fa-pied-piper-alt" style="color: #3498DB;font-size: 28px;"></i></p>
-        <p  style="padding-left: 30px;color: #3498DB;">PS：24年的愿望清单已经全部完成！<i class="fa-solid fa-list-check" style="color: #3498DB;"></i></p>
+		<p  style="padding-left: 30px;">2025年愿望清单已经更新。<i class="fa-brands fa-pied-piper-alt" style="color: #3498DB;font-size: 28px;"></i></p>
+        
 
 	</div>
 	<!-- 修改现有的HTML，添加毛玻璃效果的覆盖层和箭头图标 -->
 	<div id="favorite-shows" class="content blurred-border">
 	    <button class="title-button" aria-label="我的小屋" style="margin-bottom: 40px;">
 	        <span><i class="fa-solid fa-bolt"></i> 最爱的剧集</span>
-	        <div class="line1"></div>
-	        <div class="line2"></div>
-	        <div class="glow"></div>
-	        <div class="super-glow"></div>
+	        
 	    </button>
 	    <div class="projects" style="display: flex; justify-content: space-between; gap: 20px;font-size: 14px;">
 	        <a href="https://movie.douban.com/subject/4920528/" target="_blank" style="flex: 1;text-decoration: none;color: #000000;">
@@ -3638,11 +3473,7 @@ z-index: 10;
 	    	        	    </button>
 	    <p style="text-align: center; margin-bottom: 20px;font-size: 15px;">这是我梦里的小屋摸样，刚刚开始学3D建模画得一般般，希望有一个天我真的把它买下来！<i class="fa-solid fa-person-shelter fa-flip"></i></p>
 	    <iframe src="https://yun.kujiale.com/pub/bim/tool-page/pure-design-viewer?designid=3FO3KUSBAUL9&from=yuntu_tool&internalRefer=desktopTopBarQRCode" allowfullscreen></iframe>
-	    <video   width="640" height="360" controls>
-			
-	        <source src="./90.mp4" type="video/mp4">
-	        Your browser does not support the video tag.
-	    </video>
+	    
 		
 		
 	</div>
@@ -3657,10 +3488,7 @@ z-index: 10;
         <div id="travel-diary" class="content blurred-border">
     <button class="title-button" aria-label="我的小屋" style="margin-bottom: 40px;">
         <span><i class="fa-solid fa-bolt"></i> 旅行日记</span>
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="glow"></div>
-        <div class="super-glow"></div>
+        
     </button>
     
 		
@@ -3671,17 +3499,13 @@ z-index: 10;
     <span style="color: #2196F3;font-family: 'MaoBiTi', 'SimSun', serif;"><i class="fa-solid fa-camera fa-fade"></i>  如果没人记录，我也会将镜头对准自己。<i class="fa-solid fa-location-arrow"></i></span>
 
     <div class="description"  style="flex: 1;margin-top: -30px;">
-        <h2 class="food-title"><i class="fa-solid fa-utensils fa-fade"></i>吃吃吃<i class="fa-solid fa-burger fa-fade"></i></h2>
+        <h2 class="food-title">吃吃吃</h2>
     </div>
     <img class="chi" src="./1041.jpg" style="width: 60%;margin-top: -30px;" />
 
-    <div class="description"  style="flex: 1;margin-top: -30px;">
-        <h2 class="drink-title"><i class="fas fa-glass-cheers"></i>喝喝喝<i class="fas fa-coffee"></i></h2>
-    </div>
-	
-    <img src="./210.jpg" style="width: 60%;margin-top: -30px;margin-bottom: 30px;" />
+    
 	<div class="description"  style="flex: 1;margin-top: -30px;">
-	    <h2 class="drink-titlel"><i class="fa-solid fa-cloud-moon"></i>  我走过的路  <i class="fa-solid fa-cloud-sun"></i></h2>
+	    <h2 class="drink-titlel"> 我走过的路 </h2>
 	</div>
 	<div class="er">
 	    <div class="image-container-er">
@@ -3713,15 +3537,7 @@ z-index: 10;
 			        	    </button>
 		<div id="SOHUCS" sid="sid_840300313" ></div>
 
-    <div class="search-container">
-        <input type="text" placeholder="这是一个假的搜索框☺" class="search-input" style="border-radius: 40px;">
-
-
-		<button type="button" class="search-button">
-		    <span class="border"></span>
-		    搜搜我的小屋
-		</button>
-    </div>
+    
 
     <footer class="footer">
         <p>&copy; 2024 感谢你看完，一切内容由我狡辩！</p>
@@ -3998,26 +3814,7 @@ z-index: 10;
 		});
 
 
-           // 添加随机颜色变化效果
-        function changeColor() {
-            const titles = document.querySelectorAll('.food-title, .drink-title');
-            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#F7A072', '#E4C988'];
-            titles.forEach(title => {
-                title.style.color = colors[Math.floor(Math.random() * colors.length)];
-            });
-        }
-
-        setInterval(changeColor, 3000);
-		
-		function changeColor() {
-		    const titles = document.querySelectorAll('.food-title, .drink-titlel');
-		    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#F7A072', '#E4C988'];
-		    titles.forEach(title => {
-		        title.style.color = colors[Math.floor(Math.random() * colors.length)];
-		    });
-		}
-		
-		setInterval(changeColor, 3000);
+         
 		
 
 		   document.addEventListener('click', function(event) {
@@ -4697,15 +4494,7 @@ setInterval(draw, 1);
 		    document.querySelector('.extra-info').classList.toggle('hidden');
 		});
 
-		const animatedImages = document.querySelectorAll('.animated-image');
-		animatedImages.forEach(image => {
-		    image.addEventListener('mouseover', () => {
-		        image.classList.add('animate__pulse');
-		    });
-		    image.addEventListener('animationend', () => {
-		        image.classList.remove('animate__pulse');
-		    });
-		});
+		
 
 		document.addEventListener('DOMContentLoaded', function() {
 		  const searchButton = document.querySelector('.search-button');
