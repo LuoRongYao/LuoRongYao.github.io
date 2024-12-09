@@ -1471,15 +1471,7 @@
 		#password-input::placeholder {
 		    color: red;
 		}
-		#plane{
-		    color: skyblue;
-		    font-size: 30px;
-		    position: absolute;
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-
-		}
+		
 		.title-button {
 		    
 
@@ -2997,15 +2989,15 @@ z-index: 10;
                 <img  src="./1049.jpg" alt="幸福时刻1" class="main-image">
                 <div class="thumbnail-container">
 					<img  src="./1049.jpg" alt="幸福时刻2" class="thumbnail active">
-					<img  src="./1047.jpg" alt="幸福时刻2" class="thumbnail">
+				
 					<img  src="./1040.jpg" alt="幸福时刻2" class="thumbnail">
-					<img  src="./1034.jpg" alt="幸福时刻2" class="thumbnail">
+					
 					
                     <img  src="./1010.jpg" alt="幸福时刻1" class="thumbnail">
                     <img  src="./52.jpg" alt="幸福时刻2" class="thumbnail">
                     <img  src="./17.jpg" alt="幸福时刻3" class="thumbnail">
                     
-					<img  src="./1022.jpg" alt="幸福时刻4" class="thumbnail">
+				
                     <img  src="./64.jpg" alt="幸福时刻5" class="thumbnail">
                     
                     
@@ -3025,16 +3017,16 @@ z-index: 10;
     <div class="all-images-container">
 		<img src="./1049.jpg" alt="幸福时刻1">
 		
-		<img src="./1047.jpg" alt="幸福时刻1">
+	
 		<img src="./1040.jpg" alt="幸福时刻1">
 		
-		<img src="./1034.jpg" alt="幸福时刻1">
+	
         <img src="./1010.jpg" alt="幸福时刻1">
         <img src="./31.jpg" alt="幸福时刻1">
         <img src="./52.jpg" alt="幸福时刻2">
         <img src="./17.jpg" alt="幸福时刻3">
         
-		<img src="./1022.jpg" alt="幸福时刻8">
+		
         <img src="./64.jpg" alt="幸福时刻5">
         
         
@@ -3261,7 +3253,7 @@ z-index: 10;
 
 	        <div class="xqz-player">
 	            <div class="xqz-cover-container">
-	                <img src="./63.jpg" alt="专辑封面" class="xqz-cover" id="xqz-cover">
+	                <img src="./3.jpg" alt="专辑封面" class="xqz-cover" id="xqz-cover">
 	                <canvas class="xqz-waveform" id="xqz-waveform"></canvas>
 	            </div>
 	            <div class="xqz-controls">
@@ -3305,12 +3297,7 @@ z-index: 10;
 	        <div class="glow"></div>
 	        <div class="super-glow"></div>
 	    </button>
-		<div class="la" style="display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-top: 4px;">
-		    
-		    
-		    <img src="./1043.jpg"  alt="Apple" class="zoom-image" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-		    
-		</div>
+		
 		<div class="la" style="display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-top: 4px;">
 		    
 		    
@@ -3849,30 +3836,7 @@ z-index: 10;
 		    }
 
 
-		var plane = document.getElementById('plane');
-var deg = 0, ex = 0, ey = 0, vx = 0, vy = 0, count = 0;
-var offset = 40; // 设置偏移量
-
-window.addEventListener('mousemove', (e) => {
-    ex = e.pageX - plane.offsetLeft - plane.clientWidth / 2;
-    ey = e.pageY - plane.offsetTop - plane.clientHeight / 2;
-    deg = 360 * Math.atan(ey / ex) / (2 * Math.PI) + 5;
-    if (ex < 0) {
-        deg += 180;
-    }
-    count = 0;
-});
-
-function draw() {
-    plane.style.transform = 'rotate(' + deg + 'deg)';
-    if (count < 100) {
-        vx += (ex - offset) / 100; // 引入偏移量
-        vy += (ey - offset) / 100; // 引入偏移量
-    }
-    plane.style.left = vx + 'px';
-    plane.style.top = vy + 'px';
-    count++;
-}
+		
 
 setInterval(draw, 1);
 
