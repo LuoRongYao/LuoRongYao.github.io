@@ -2024,7 +2024,7 @@ z-index: 10;
 		}
 
         .all-images-container {
-            display: none;
+           
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
@@ -2309,6 +2309,25 @@ z-index: 10;
 				
 				.zi:hover {
 					color: #008000;
+				}
+				
+				.image-overlay {
+				    position: absolute;
+				    top: 10px;
+				    left: 10px;
+				    z-index: 10;
+				}
+				.image-overlay img {
+				    width: 30px;
+				    height: 30px;
+				    border-radius: 50%;
+				}
+				.image-overlay i {
+				    position: absolute;
+				    bottom: 6px;
+				    right: 1px;
+				    font-size: 10px;
+				    color: white;
 				}
 		        
         
@@ -2980,58 +2999,74 @@ z-index: 10;
 </div>
 
 	<div id="tourist-photos" class="content blurred-border">
-    <button class="title-button" aria-label="我的小屋">
-        <span><i class="fa-solid fa-bolt"></i> 游客照</span>
-    </button>
-    <div class="happy-moments" style="margin-top: 40px;">
-        <div class="main-image-container">
-            <div style="position: relative; width: 100%; height: auto;">
-                <img  src="./1049.jpg" alt="幸福时刻1" class="main-image">
-                <div class="thumbnail-container">
-					<img  src="./1049.jpg" alt="幸福时刻2" class="thumbnail active">
-					
-					<img  src="./1040.jpg" alt="幸福时刻2" class="thumbnail">
-					
-					<img  src="./1010.jpg" alt="幸福时刻2" class="thumbnail">
-                <img  src="./31.jpg" alt="幸福时刻2" class="thumbnail">
-                    <img  src="./52.jpg" alt="幸福时刻2" class="thumbnail">
-                    <img  src="./17.jpg" alt="幸福时刻3" class="thumbnail">
-                    
-					
-                    <img  src="./64.jpg" alt="幸福时刻5" class="thumbnail">
-                    
-                    
-                </div>         
-                <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
-                    <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
-                    <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px;color: white;"></i>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-    <button class="show-all-images">
-        <i class="fa-solid fa-angles-down fa-bounce" style="color: black;"></i>
-    </button>
-    <div class="all-images-container">
-		<img src="./1049.jpg" alt="幸福时刻1">
-		
-		
-		<img src="./1040.jpg" alt="幸福时刻1">
-		<img src="./1010.jpg" alt="幸福时刻1">
+	    <button class="title-button" aria-label="我的小屋">
+	        <span><i class="fa-solid fa-bolt"></i> 游客照</span>
+	    </button>
+	    <div class="all-images-container">
+	        <!-- 图片 1 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./1052.jpg" alt="幸福时刻1">
+	        </div>
 	
-        <img src="./31.jpg" alt="幸福时刻1">
-        <img src="./52.jpg" alt="幸福时刻2">
-        <img src="./17.jpg" alt="幸福时刻3">
-        
+	        <!-- 图片 2 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./1040.jpg" alt="幸福时刻1">
+	        </div>
 	
-        <img src="./64.jpg" alt="幸福时刻5">
-        
-        
-    </div>
-</div>
-
+	        <!-- 图片 3 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./1010.jpg" alt="幸福时刻1">
+	        </div>
+	
+	        <!-- 图片 4 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./31.jpg" alt="幸福时刻1">
+	        </div>
+	
+	        <!-- 图片 5 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./52.jpg" alt="幸福时刻2">
+	        </div>
+	
+	        <!-- 图片 6 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./17.jpg" alt="幸福时刻3">
+	        </div>
+	
+	        <!-- 图片 7 -->
+	        <div style="position: relative; display: inline-block;">
+	            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+	                <img src="./3.jpg" alt="左上角图片" style="width: 30px; height: 30px; border-radius: 50%;">
+	                <i class="fa-solid fa-fire fa-beat-fade" style="position: absolute; bottom: 6px; right: 1px; font-size: 10px; color: white;"></i>
+	            </div>
+	            <img src="./64.jpg" alt="幸福时刻5">
+	        </div>
+	    </div>
+	</div>
 
 
 <div id="vlog" class="content blurred-border">
@@ -3739,53 +3774,7 @@ z-index: 10;
            });
        });
 
-		document.addEventListener('DOMContentLoaded', function() {
-		    const mainImage = document.querySelector('.main-image');
-		    const thumbnails = document.querySelectorAll('.thumbnail');
-		    const showAllImagesButton = document.querySelector('.show-all-images');
-		    const allImagesContainer = document.querySelector('.all-images-container');
 		
-		    thumbnails.forEach(thumb => {
-		        thumb.addEventListener('click', function() {
-		            mainImage.src = this.src;
-		            mainImage.alt = this.alt;
-		            thumbnails.forEach(t => t.classList.remove('active'));
-		            this.classList.add('active');
-		            centerMainImage();
-		        });
-		    });
-		
-		    showAllImagesButton.addEventListener('click', function() {
-		        if (allImagesContainer.style.display === 'none' || allImagesContainer.style.display === '') {
-		            allImagesContainer.style.display = 'flex';
-		            this.innerHTML = '<i class="fa-solid fa-angles-up fa-bounce"></i> ';
-		        } else {
-		            allImagesContainer.style.display = 'none';
-		            this.innerHTML = '<i class="fa-solid fa-angles-down fa-bounce"></i> ';
-		        }
-		    });
-		
-		    function centerMainImage() {
-		        const mainImageContainer = document.querySelector('.main-image-container');
-		        const mainImage = document.querySelector('.main-image');
-		        const containerWidth = mainImageContainer.clientWidth;
-		        const containerHeight = mainImageContainer.clientHeight;
-		        const imageWidth = mainImage.naturalWidth;
-		        const imageHeight = mainImage.naturalHeight;
-		
-		        let scale = 1;
-		        if (imageWidth > containerWidth || imageHeight > containerHeight) {
-		            const scaleX = containerWidth / imageWidth;
-		            const scaleY = containerHeight / imageHeight;
-		            scale = Math.min(scaleX, scaleY);
-		        }
-		
-		        mainImage.style.width = `${imageWidth * scale}px`;
-		        mainImage.style.height = `${imageHeight * scale}px`;
-		        mainImage.style.marginLeft = `${(containerWidth - (imageWidth * scale)) / 2}px`;
-		        mainImage.style.marginTop = `${(containerHeight - (imageHeight * scale)) / 2}px`;
-		    }
-		});
 		
 		document.getElementById('ask-button').addEventListener('click', function() {
 		    const inputValue = document.getElementById('password-input').value;
