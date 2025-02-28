@@ -2265,6 +2265,8 @@ z-index: 10;
 		        .article[data-index="2"],
 				.article[data-index="3"],
 				.article[data-index="4"],
+				.article[data-index="38"],
+				.article[data-index="39"],
 				.article[data-index="5"],
 				.article[data-index="6"],
 		        .article[data-index="7"],
@@ -2407,6 +2409,35 @@ z-index: 10;
 	
 
     <div class="articles" style="display: flex; flex-direction: column; color: black; font-size: 13px;">
+		<div class="article" data-index="42" >
+		    <span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
+		    <div class="article-header">
+		        <div class="header-left">
+		            <div class="avatar-container">
+		                <img src="./3.jpg" alt="Avatar" class="avatar">
+		                <div class="avatar-icon">
+		                    <i class="fa-solid fa-bolt fa-fade"></i>
+		                </div>
+		            </div>
+		            <span class="author">xianggugu</span>
+		        </div>
+		        <span class="date">2025年2月28日</span>
+		    </div>
+		    <div class="article-content">
+		        <p>有一天你突然发现你已经到了需要跟同龄人道别的时候了，为什么会这样呢，谁都不知道。</p>
+				
+		    </div>
+		    <div class="article-footer">
+				
+				
+				
+				
+				
+		
+		        
+		        <span class="source">来自Web版</span>
+		    </div>
+		</div>
 		<div class="article" data-index="41" >
 		    <span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
 		    <div class="article-header">
@@ -3757,7 +3788,7 @@ z-index: 10;
 		
 		document.addEventListener('DOMContentLoaded', function() {
 		    const showButton = document.querySelector('.showshu');
-		    const hiddenArticles = document.querySelectorAll('.article[data-index="2"],.article[data-index="3"],.article[data-index="4"],.article[data-index="5"],.article[data-index="6"], .article[data-index="7"], .article[data-index="8"], .article[data-index="9"], .article[data-index="10"], .article[data-index="11"], .article[data-index="12"], .article[data-index="13"], .article[data-index="14"], .article[data-index="15"], .article[data-index="16"], .article[data-index="17"], .article[data-index="18"], .article[data-index="19"], .article[data-index="20"], .article[data-index="21"], .article[data-index="22"], .article[data-index="23"], .article[data-index="24"], .article[data-index="25"], .article[data-index="26"], .article[data-index="27"], .article[data-index="28"], .article[data-index="29"],.article[data-index="1"], .article[data-index="31"], .article[data-index="32"], .article[data-index="33"], .article[data-index="34"], .article[data-index="35"],.article[data-index="36"],.article[data-index="37"], .article[data-index="30"]');
+		    const hiddenArticles = document.querySelectorAll('.article[data-index="2"],.article[data-index="3"],.article[data-index="4"],.article[data-index="5"],.article[data-index="6"], .article[data-index="7"], .article[data-index="8"], .article[data-index="9"], .article[data-index="10"], .article[data-index="11"], .article[data-index="12"], .article[data-index="13"], .article[data-index="14"], .article[data-index="15"], .article[data-index="16"], .article[data-index="17"], .article[data-index="18"], .article[data-index="19"], .article[data-index="20"], .article[data-index="21"], .article[data-index="22"], .article[data-index="23"], .article[data-index="24"], .article[data-index="25"], .article[data-index="26"], .article[data-index="27"], .article[data-index="28"], .article[data-index="29"],.article[data-index="1"], .article[data-index="31"], .article[data-index="32"], .article[data-index="33"], .article[data-index="34"], .article[data-index="35"],.article[data-index="36"],.article[data-index="37"], .article[data-index="38"],.article[data-index="39"],.article[data-index="30"]');
 		
 		    showButton.addEventListener('click', function() {
 		        hiddenArticles.forEach(article => {
