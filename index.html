@@ -939,10 +939,10 @@
 		iframe {
 			display: block;
 			width: 100%;
-			height: 8000px;
+			height: 600px;
 			border: none;
 			margin: 50px auto;
-			max-height: 8000px;
+			max-height: 600px;
 			/* 设置最大高度 */
 		}
 
@@ -1447,103 +1447,174 @@
 			opacity: 1;
 		}
 
-		/* 定义一个名为 .xqz-playlist 的 CSS 类 */
-		.xqz-playlist {
+
+		/* 全新音乐播放器样式 */
+		.music-player-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 15px;
+			backdrop-filter: blur(10px);
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+		}
+
+		.album-cover-section {
 			position: relative;
-			/* 改为相对定位 */
-			right: auto;
-			/* 移除固定右侧距离 */
-			top: auto;
-			/* 移除固定顶部距离 */
-			height: auto;
-			/* 高度自适应内容 */
+			width: 200px;
+			height: 200px;
+		}
+
+		.album-cover {
 			width: 100%;
-			/* 宽度占满容器 */
-			max-height: 600px;
-			/* 设置最大高度 */
-			overflow-y: auto;
-			/* 允许垂直滚动 */
-			margin-top: -50px;
-			/* 添加一些顶部间距 */
-			display: block;
-			/* 改为块级显示 */
-			margin-left: -40px;
-
+			height: 100%;
+			border-radius: 50%;
+			object-fit: cover;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+			animation: rotate 20s linear infinite;
+			animation-play-state: paused;
 		}
 
-		.xqz-playlist h2 {
-			text-align: center;
-			font-size: 4px;
-			color: black;
+		.player-controls {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			gap: 15px;
 		}
 
-		.xqz-playlist li {
-			text-align: center;
-			padding: 4px;
-			margin-bottom: 1px;
-			background: white;
-			border-radius: 40px;
+		.control-buttons {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.control-btn {
+			background: #1db954;
+			color: white;
+			border: none;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			font-size: 18px;
 			cursor: pointer;
 			transition: all 0.3s ease;
-			display: flex;
-			align-items: center;
-			color: black;
-			border: 0.1px solid black;
-			/* 添加黑色线框 */
 		}
 
-		.xqz-playlist li:hover,
-		.xqz-playlist li.active {
-			background: rgba(29, 185, 84, 0.3);
+		.control-btn:hover {
+			transform: scale(1.1);
+			box-shadow: 0 0 15px rgba(29, 185, 84, 0.5);
+		}
+
+		.play-pause-btn {
+			width: 60px;
+			height: 60px;
+			font-size: 24px;
+		}
+
+		.progress-section {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			gap: 10px;
+		}
+
+		.time {
+			font-size: 14px;
+			color: #333;
+			min-width: 40px;
+			text-align: center;
+		}
+
+		.progress-bar-container {
+			flex: 1;
+			height: 6px;
+			background: #ddd;
+			border-radius: 3px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.progress-bar {
+			height: 100%;
+			background: #1db954;
+			border-radius: 3px;
+			width: 0%;
+			transition: width 0.1s linear;
+		}
+
+		.playlist-section {
+			width: 100%;
+			background: rgba(255, 255, 255, 0.8);
+			border-radius: 10px;
+			padding: 15px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.playlist-section h3 {
+			margin-top: 0;
+			margin-bottom: 15px;
+			color: #333;
+			text-align: center;
+		}
+
+		.song-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			max-height: 300px;
+			overflow-y: auto;
+		}
+
+		.song-list li {
+			padding: 12px 15px;
+			margin-bottom: 8px;
+			background: white;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			border: 1px solid #e0e0e0;
+		}
+
+		.song-list li:hover,
+		.song-list li.active {
+			background: rgba(29, 185, 84, 0.2);
 			transform: translateX(5px);
 		}
 
-		.xqz-playlist li.active {
-			color: #1db954;
+		.song-list li.active {
+			border-left: 4px solid #1db954;
 		}
 
-		.xqz-playlist li::before {
-			content: '▶';
-			margin-right: 10px;
-			font-size: 12px;
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
-
-		.xqz-playlist li:hover::before,
-		.xqz-playlist li.active::before {
-			opacity: 1;
-		}
-
-		.xqz-song-info {
+		.song-info {
 			display: flex;
+			flex-direction: column;
 		}
 
-		.xqz-song-title {
+		.song-title {
+			font-weight: bold;
+			color: #333;
+			font-size: 16px;
+		}
+
+		.song-artist {
+			color: #666;
 			font-size: 14px;
-			opacity: 0.7;
+			margin-top: 4px;
 		}
 
-		.xqz-song-artist {
-			font-size: 14px;
-			opacity: 0.7;
-		}
-
-		.xqz-playlist::-webkit-scrollbar {
-			width: 6px;
-		}
-
-		.xqz-playlist::-webkit-scrollbar-track {
-			background: rgba(255, 255, 255, 0.1);
-		}
-
-		.xqz-playlist::-webkit-scrollbar-thumb {
-			background: rgba(255, 255, 255, 0.3);
-			border-radius: 3px;
-		}
-
-		.xqz-playlist::-webkit-scrollbar-thumb:hover {
-			background: rgba(255, 255, 255, 0.5);
+		@keyframes rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
 		}
 
 		#music-matrix {
@@ -1603,6 +1674,183 @@
 		.project:hover .blur-overlay {
 			opacity: 1;
 			color: darkgreen;
+		}
+
+		/* 全新音乐播放器样式 */
+		.music-player {
+			width: 100%;
+			max-width: 600px;
+			margin: 0 auto;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 15px;
+			backdrop-filter: blur(10px);
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.player-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.album-art {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-bottom: 30px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		}
+
+		.album-art img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			animation: rotate 20s linear infinite;
+			animation-play-state: paused;
+		}
+
+		@keyframes rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		.controls {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 20px;
+			gap: 20px;
+		}
+
+		.control-btn {
+			background: #1db954;
+			color: white;
+			border: none;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			font-size: 18px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.control-btn:hover {
+			transform: scale(1.1);
+			box-shadow: 0 0 15px rgba(29, 185, 84, 0.5);
+		}
+
+		.play-btn {
+			width: 60px;
+			height: 60px;
+			font-size: 24px;
+		}
+
+		.progress-container {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			gap: 10px;
+			margin-bottom: 30px;
+		}
+
+		.progress-container span {
+			font-size: 14px;
+			color: #333;
+			min-width: 40px;
+			text-align: center;
+		}
+
+		.progress-bar {
+			flex: 1;
+			height: 6px;
+			background: #ddd;
+			border-radius: 3px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.progress {
+			height: 100%;
+			background: #1db954;
+			border-radius: 3px;
+			width: 0%;
+			transition: width 0.1s linear;
+		}
+
+		.playlist-container {
+			width: 100%;
+			background: rgba(255, 255, 255, 0.8);
+			border-radius: 10px;
+			padding: 5px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.playlist-container h3 {
+			display: none;
+		}
+
+		#playlist {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			max-height: none;
+			overflow-y: visible;
+		}
+
+		#playlist li {
+			padding: 6px 8px;
+			margin-bottom: 3px;
+			background: white;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			border: 1px solid #e0e0e0;
+			font-size: 11px;
+		}
+
+		#playlist li:hover,
+		#playlist li.active {
+			background: rgba(29, 185, 84, 0.2);
+			transform: translateX(5px);
+		}
+
+		#playlist li.active {
+			border-left: 4px solid #1db954;
+		}
+
+		.song-info {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.song-title {
+			color: #333;
+			font-size: 11px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			flex: 1;
+			font-weight: normal;
+		}
+
+		.song-artist {
+			color: #666;
+			font-size: 12px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-left: 10px;
+			flex: 1;
+			text-align: right;
 		}
 
 		#secret-image {
@@ -2862,7 +3110,7 @@
 			color: #8b6f47;
 			font-weight: 400;
 			margin-top: 20px;
-			
+
 			animation: fadeInUp 1.5s ease-out 0.3s both;
 		}
 
@@ -2871,7 +3119,7 @@
 			color: #8b6f47;
 			font-weight: 500;
 			margin-top: 8px;
-			
+
 			margin-left: 16px;
 			animation: fadeInUp 1.5s ease-out 0.4s both;
 		}
@@ -3067,8 +3315,8 @@
 		<ul>
 			<li><a href="#treehouse"><i class="fas fa-tree"></i> 最近在想啥</a></li>
 			<li><a href="#tourist-photos"><i class="fas fa-camera"></i> 最近拍了啥</a></li>
+
 			
-			<li><a href="#little-secret"><i class="fas fa-key"></i> 最近思考啥</a></li>
 			<li><a href="#music-matrix"><i class="fas fa-music"></i> 最近在听啥</a></li>
 
 			<li><a href="#interesting"><i class="fas fa-laugh"></i> 最近遇到啥</a></li>
@@ -3125,6 +3373,35 @@
 
 		<div class="articles" style="display: flex; flex-direction: column; color: black; font-size: 13px;">
 			<div class="article" data-index="58">
+				<span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
+				<div class="article-header">
+					<div class="header-left">
+						<div class="avatar-container">
+							<img src="./3.jpg" alt="Avatar" class="avatar">
+							<div class="avatar-icon">
+								<i class="fa-solid fa-bolt fa-fade"></i>
+							</div>
+						</div>
+						<span class="author">xianggugu</span>
+					</div>
+					<span class="date">2025年12月17日</span>
+				</div>
+				<div class="article-content">
+					<p>你的名字中国分湖见。</i></p>
+			
+				</div>
+				<div class="article-footer">
+			
+			
+			
+			
+			
+			
+			
+					<span class="source">来自Web版</span>
+				</div>
+			</div>
+			<div class="article" data-index="55">
 				<span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
 				<div class="article-header">
 					<div class="header-left">
@@ -4932,8 +5209,7 @@
 			<!-- 其他文章重复上述结构 -->
 		</div>
 	</div>
-	<iframe src="https://static-mp-480f8b06-b3b2-4ff9-8b12-13ade2a0fad8.next.bspapp.com/" allowfullscreen></iframe>
-
+	
 
 	<div id="tourist-photos" class="content blurred-border">
 		<button class="title-button" aria-label="我的小屋">
@@ -4982,29 +5258,38 @@
 			<div class="super-glow"></div>
 		</button>
 
-		<div class="xqz-player">
-			<div class="xqz-cover-container">
-				<img src="./3.jpg" alt="专辑封面" class="xqz-cover" id="xqz-cover">
-				<canvas class="xqz-waveform" id="xqz-waveform"></canvas>
+		<!-- 全新音乐播放器 -->
+		<div class="music-player">
+			<div class="player-container">
+				<!-- 专辑封面 -->
+				<div class="album-art">
+					<img id="cover" src="./3.jpg" alt="专辑封面">
+				</div>
+
+				<!-- 控制按钮 -->
+				<div class="controls">
+					<button id="prev" class="control-btn">⏮</button>
+					<button id="play-pause" class="control-btn play-btn">▶</button>
+					<button id="next" class="control-btn">⏭</button>
+				</div>
+
+				<!-- 进度条 -->
+				<div class="progress-container">
+					<span id="current-time">0:00</span>
+					<div class="progress-bar" id="progress-bar">
+						<div class="progress" id="progress"></div>
+					</div>
+					<span id="duration">0:00</span>
+				</div>
+
+				<!-- 播放列表 -->
+				<div class="playlist-container">
+					<h3>播放列表</h3>
+					<ul id="playlist"></ul>
+				</div>
 			</div>
-			<div class="xqz-controls">
-				<button class="xqz-control-btn" id="xqz-prev-btn" style="background-color: forestgreen;">◀</button>
-				<button class="xqz-control-btn xqz-play-pause-btn" id="xqz-play-pause-btn"
-					style="background-color: forestgreen;">♪</button>
-				<button class="xqz-control-btn" id="xqz-next-btn" style="background-color: forestgreen;">▶</button>
-			</div>
-			<div class="xqz-progress-container" id="xqz-progress-container">
-				<div class="xqz-progress" id="xqz-progress"></div>
-			</div>
-			<div class="xqz-time-info">
-				<span id="xqz-current-time">0:00</span>
-				<span id="xqz-duration">0:00</span>
-			</div>
-			<div class="xqz-lyrics" id="xqz-lyrics"></div>
 		</div>
-		<div class="xqz-playlist">
-			<ul id="xqz-playlist"></ul>
-		</div>
+
 
 	</div>
 
@@ -5085,86 +5370,6 @@
 
 
 
-	<div id="little-secret" class="content blurred-border">
-		<button class="title-button" aria-label="我的小屋" style="margin-bottom: 40px;">
-			<span><i class="fa-solid fa-bolt"></i> 最近思考啥</span>
-			<div class="line1"></div>
-			<div class="line2"></div>
-			<div class="glow"></div>
-			<div class="super-glow"></div>
-		</button>
-
-		<div>
-			<p>这里有一些悄悄话！</p>
-		</div>
-		<div id="secret-message" style="display: none;">
-
-
-
-			<p style="
-    		
-    		    color: #333;
-    		
-    		    font-size: 18px;
-    		    line-height: 1.6;
-    		    text-align: justify;
-    		    padding: 20px;
-    		    background-color: #f9f9f9;
-    		    border-left: 5px solid #4CAF50;
-    		    margin: 20px 0;
-    		    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    		    transition: all 0.3s ease;
-    		">
-
-
-				一、我接下来还是会坚持旅游这件事，这对我很重要，什么时候停止我不知道，或者在我想让它停止的时候。
-				<hr>二、我还有一个小小的期许，就是能不能考到市里工作，我可能还是想在市里生活，如果考不上也可能在这里退休，然后去一个我喜欢的地方养老。
-
-				</span>
-			<p>三、我从不怀疑这个世界上有一个和我非常契合的人，她肯定存在这14亿人里，但很烦的是，我可能这辈子都遇不到她。过去的二十多年里我只喜欢过一个人，唯一可惜的是我从来没有向她表达过我的感受吧。接下来就顺其自然吧，我也很好奇会不会有一个人来参与我的生活，我其实更希望她是一个和我相似的人，不要太闷，性格在我这里真的很重要，我更希望我们能交替的主导这段关系，两个人坐在一起不要不说话，我讨厌那种令人窒息的尴尬，这也是为什么一对一时我总在努力找话题，人多的时候其实我更愿意找个安静的角落坐着。如果只是我在一味地找话题的话，这样真的很累，我不想找一个对我完全没有探索欲的人。我更希望有一个好的结果，即使过程平平淡淡，如果不是为了一个好的结局，那我为什么开始呢，我自己生活不是舒服多了。如果我对一个人有探索欲的话，应该就是了吧，如果我还能感受到回应，那就太棒了。不过也可能不会有这个人，上天自有安排，我且期待着。
-			</p>
-			<hr>
-			四、我可以接受你一开始就不要选我，但请不要选了我以后又来戳我的脊梁骨，我超级讨厌别人戳我的脊梁骨，就像我妈妈会挑着我爸的毛病不停的攻击，我没有什么大志向，比较佛系，比较咸鱼，但是我会尽力给你你想要的生活，但我不想让自己太累，一定去达到某个高度，所以我不会轻易承诺你什么，如果一开始就达不到你的标准，请你一定不要选我，结果对我真的很重要。
-
-
-			</p>
-
-
-			<div class="apple-container"
-				style="display: flex; align-items: center; justify-content: center;margin-top: 20px;">
-				<img src="./3.jpg" alt="Apple"
-					style="width: 200px; height: 250px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-					id="secret-image">
-			</div>
-
-
-
-
-		</div>
-		<button id="decrypt-button"
-			style="margin-top: 20px; padding: 10px 20px; font-size: 16px; border-radius: 30px;color: black;width: 60%;">解
-			<i class="fa-solid fa-unlock-keyhole fa-shake"></i> 密</button>
-		<div id="password-modal"
-			style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center;z-index: 11000;">
-			<div style="background: white; padding: 20px; border-radius: 10px; position: relative;z-index: 11000;">
-				<button id="close-modal"
-					style="position: absolute; top: -15px; right: 10px; background: none; border: none; font-size: 40px; cursor: pointer;">&times;</button>
-
-				<p style="font-style: bold;">你可以向输入框提问，纯数字密码 <i
-						class="fa-regular fa-circle-question fa-beat-fade"></i></i></p>
-				<input type="text" id="password-input" placeholder="这是4位密码✿" onkeydown="handleKeyDown(event)">
-				<button id="ask-button"
-					style="padding: 10px 20px; font-size: 16px; cursor: pointer;border-radius: 30px;z-index: 11000;">向输入框提问？</button><button
-					id="submit-password"
-					style="padding: 10px 20px; font-size: 16px; cursor: pointer;border-radius: 30px;">提 交 <i
-						class="fa-solid fa-circle-check fa-bounce" style="color: #63E6BE;"></i></button>
-			</div>
-		</div>
-		<canvas id="fireworksLeft" style="position: fixed; bottom: 0; left: 0; pointer-events: none;"></canvas>
-		<canvas id="fireworksRight" style="position: fixed; bottom: 0; right: 0; pointer-events: none;"></canvas>
-	</div>
-
-
 
 
 
@@ -5196,7 +5401,7 @@
 					<div class="blur-overlay"></div> <!-- 添加毛玻璃效果的覆盖层 -->
 					<img src="./8.webp" alt="Movie 1" style="width: 100%; border-radius: 10px;">
 					<h3 class="zi" style="margin-top: 10px; text-align: center;">那些年我们一起追的女孩</h3>
-					<p class="zi" style="text-align: center;">台词：我也很喜欢当时喜欢你的我自己，你永远是我眼中的苹果。</p>
+
 					<i class="fa-solid fa-eject fa-bounce" style="color: black;"></i>
 
 				</div>
@@ -5207,18 +5412,17 @@
 					<div class="blur-overlay"></div> <!-- 添加毛玻璃效果的覆盖层 -->
 					<img src="./26.jpg" alt="Movie 1" style="width: 100%; border-radius: 10px;">
 					<h3 class="zi" style="margin-top: 10px; text-align: center;">逃避虽可耻但有用</h3>
-					<p class="zi" style="text-align: center;">虽然现实里比较抓瞎，但是很像我理想的婚后生活，嘻嘻！</p>
+
 					<i class="fa-solid fa-eject fa-bounce" style="color: black;"></i>
 
 				</div>
 			</a>
-			<a href="https://movie.douban.com/subject/26259677/" target="_blank"
-				style="flex: 1;text-decoration: none;color: #000000;">
+			<a href="" target="_blank" style="flex: 1;text-decoration: none;color: #000000;">
 				<div style="background-color: #ffffff; flex: 1;">
 					<div class="blur-overlay"></div> <!-- 添加毛玻璃效果的覆盖层 -->
-					<img src=".//10.jpg" alt="Movie 3" style="width: 100%; border-radius: 10px;">
-					<h3 class="zi" style="margin-top: 10px; text-align: center;">垫底辣妹</h3>
-					<p class="zi" style="text-align: center;">高中英语老师在课上给我们放的，印象很深。</p>
+					<img src=".//9.jpeg" alt="Movie 3" style="width: 100%; border-radius: 10px;">
+					<h3 class="zi" style="margin-top: 10px; text-align: center;">初恋这件小事</h3>
+
 					<i class="fa-solid fa-eject fa-bounce" style="color: black;"></i>
 
 				</div>
@@ -5229,40 +5433,13 @@
 					<div class="blur-overlay"></div> <!-- 添加毛玻璃效果的覆盖层 -->
 					<img src=".//41.webp" alt="Movie 3" style="width: 100%; border-radius: 10px;">
 					<h3 class="zi" style="margin-top: 10px; text-align: center;">我的少女时代</h3>
-					<p class="zi" style="text-align: center;">台词：我让刘德华唱给你听。</p>
+
 					<i class="fa-solid fa-eject fa-bounce" style="color: black;"></i>
 
 				</div>
 			</a>
 		</div>
-		<div class="video-container">
-			<video width="640" height="360" controls poster="./1024.webp">
-				<source src="./那些年我.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-			<div class="video-overlay">
-				<img src="./3.jpg" alt="左上角图片" style="width: 40px; height: 40px; border-radius: 50%;">
-				<div class="avatar-icont">
-					<i class="fa-solid fa-bolt fa-fade"></i>
-				</div>
-			</div>
-			<i class="fa-regular fa-circle-dot fa-fade video-icon"
-				style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-		</div>
-		<div class="video-container">
-			<video width="640" height="360" controls poster="./1025.webp">
-				<source src="./我的少女.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-			<div class="video-overlay">
-				<img src="./3.jpg" alt="左上角图片" style="width: 40px; height: 40px; border-radius: 50%;">
-				<div class="avatar-icont">
-					<i class="fa-solid fa-bolt fa-fade"></i>
-				</div>
-			</div>
-			<i class="fa-regular fa-circle-dot fa-fade video-icon"
-				style="position: absolute; top: 10px; right: 10px; font-size: 24px; display: none;color: white;"></i>
-		</div>
+
 	</div>
 
 	<div id="my-house" class="content blurred-border">
@@ -5305,20 +5482,25 @@
 
 	<script>
 
-		document.getElementById('decrypt-button').addEventListener('click', function () {
-			document.getElementById('password-modal').style.display = 'flex';
-		});
+		const decryptBtn = document.getElementById('decrypt-button');
+		if (decryptBtn) {
+			decryptBtn.addEventListener('click', function () {
+				document.getElementById('password-modal').style.display = 'flex';
+			});
+		}
 
 		document.addEventListener('DOMContentLoaded', function () {
 			const showButton = document.querySelector('.showshu');
 			const hiddenArticles = document.querySelectorAll('.article[data-index="2"],.article[data-index="3"],.article[data-index="4"],.article[data-index="5"],.article[data-index="6"], .article[data-index="7"], .article[data-index="8"], .article[data-index="9"], .article[data-index="10"], .article[data-index="11"], .article[data-index="12"], .article[data-index="13"], .article[data-index="14"], .article[data-index="15"], .article[data-index="16"], .article[data-index="17"], .article[data-index="18"], .article[data-index="19"], .article[data-index="20"], .article[data-index="21"], .article[data-index="22"], .article[data-index="23"], .article[data-index="24"], .article[data-index="25"], .article[data-index="26"], .article[data-index="27"], .article[data-index="28"], .article[data-index="29"],.article[data-index="1"], .article[data-index="31"], .article[data-index="32"], .article[data-index="33"], .article[data-index="34"], .article[data-index="35"],.article[data-index="36"],.article[data-index="37"], .article[data-index="38"],.article[data-index="39"],.article[data-index="40"],.article[data-index="42"],.article[data-index="43"],.article[data-index="44"],.article[data-index="41"],.article[data-index="45"],.article[data-index="46"],.article[data-index="47"],.article[data-index="48"],.article[data-index="49"],.article[data-index="50"],.article[data-index="51"],.article[data-index="52"],.article[data-index="53"],.article[data-index="54"],.article[data-index="55"],.article[data-index="56"],.article[data-index="30"]');
 
-			showButton.addEventListener('click', function () {
-				hiddenArticles.forEach(article => {
-					article.style.display = 'block';
+			if (showButton) {
+				showButton.addEventListener('click', function () {
+					hiddenArticles.forEach(article => {
+						article.style.display = 'block';
+					});
+					showButton.style.display = 'none'; // 隐藏按钮
 				});
-				showButton.style.display = 'none'; // 隐藏按钮
-			});
+			}
 		});
 
 		document.addEventListener('DOMContentLoaded', function () {
@@ -5327,20 +5509,22 @@
 			var images = document.querySelectorAll('.clickable-image');
 			var closeta = document.getElementsByClassName('closeta')[0];
 
-			images.forEach(function (img) {
-				img.onclick = function () {
-					modal.style.display = "block";
-					modalImg.src = this.getAttribute('data-fullsrc');
-				}
-			});
+			if (modal && modalImg && closeta) {
+				images.forEach(function (img) {
+					img.onclick = function () {
+						modal.style.display = "block";
+						modalImg.src = this.getAttribute('data-fullsrc');
+					}
+				});
 
-			closeta.onclick = function () {
-				modal.style.display = "none";
-			}
-
-			modal.onclick = function (event) {
-				if (event.target == modal) {
+				closeta.onclick = function () {
 					modal.style.display = "none";
+				}
+
+				modal.onclick = function (event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
 				}
 			}
 		});
@@ -5351,26 +5535,28 @@
 			const thumbnails = document.querySelectorAll('.thumbnail');
 			const thumbnailContainer = document.querySelector('.thumbnail-container');
 
-			thumbnails.forEach(thumbnail => {
-				thumbnail.addEventListener('click', function () {
-					// 更新主图片
-					mainImage.src = this.src;
-					mainImage.alt = this.alt;
+			if (mainImage && thumbnailContainer) {
+				thumbnails.forEach(thumbnail => {
+					thumbnail.addEventListener('click', function () {
+						// 更新主图片
+						mainImage.src = this.src;
+						mainImage.alt = this.alt;
 
-					// 更新激活状态
-					thumbnails.forEach(t => t.classList.remove('active'));
-					this.classList.add('active');
+						// 更新激活状态
+						thumbnails.forEach(t => t.classList.remove('active'));
+						this.classList.add('active');
 
-					// 将点击的缩略图滚动到中心位置
-					const containerHeight = thumbnailContainer.offsetHeight;
-					const thumbnailHeight = this.offsetHeight;
-					const scrollPosition = this.offsetTop - (containerHeight / 2) + (thumbnailHeight / 2);
-					thumbnailContainer.scrollTo({
-						top: scrollPosition,
-						behavior: 'smooth'
+						// 将点击的缩略图滚动到中心位置
+						const containerHeight = thumbnailContainer.offsetHeight;
+						const thumbnailHeight = this.offsetHeight;
+						const scrollPosition = this.offsetTop - (containerHeight / 2) + (thumbnailHeight / 2);
+						thumbnailContainer.scrollTo({
+							top: scrollPosition,
+							behavior: 'smooth'
+						});
 					});
 				});
-			});
+			}
 		});
 
 		document.addEventListener('DOMContentLoaded', function () {
@@ -5417,43 +5603,45 @@
 
 		document.addEventListener('DOMContentLoaded', (event) => {
 			const container = document.querySelector('.image-container');
-			const img = container.querySelector('img');
-			let isDragging = false;
-			let startY;
-			let scrollTop;
+			if (container) {
+				const img = container.querySelector('img');
+				let isDragging = false;
+				let startY;
+				let scrollTop;
 
-			container.addEventListener('mouseenter', () => {
-				container.style.overflow = 'auto';
-			});
+				container.addEventListener('mouseenter', () => {
+					container.style.overflow = 'auto';
+				});
 
-			container.addEventListener('mouseleave', () => {
-				container.style.overflow = 'hidden';
-			});
+				container.addEventListener('mouseleave', () => {
+					container.style.overflow = 'hidden';
+				});
 
-			container.addEventListener('mousedown', (e) => {
-				isDragging = true;
-				startY = e.pageY - container.offsetTop;
-				scrollTop = container.scrollTop;
-				container.style.cursor = 'grabbing';
-			});
+				container.addEventListener('mousedown', (e) => {
+					isDragging = true;
+					startY = e.pageY - container.offsetTop;
+					scrollTop = container.scrollTop;
+					container.style.cursor = 'grabbing';
+				});
 
-			document.addEventListener('mouseup', () => {
-				isDragging = false;
-				container.style.cursor = 'grab';
-			});
+				document.addEventListener('mouseup', () => {
+					isDragging = false;
+					container.style.cursor = 'grab';
+				});
 
-			document.addEventListener('mousemove', (e) => {
-				if (!isDragging) return;
-				e.preventDefault();
-				const y = e.pageY - container.offsetTop;
-				const walk = (y - startY) * 2;
-				container.scrollTop = scrollTop - walk;
-			});
+				document.addEventListener('mousemove', (e) => {
+					if (!isDragging) return;
+					e.preventDefault();
+					const y = e.pageY - container.offsetTop;
+					const walk = (y - startY) * 2;
+					container.scrollTop = scrollTop - walk;
+				});
 
-			container.addEventListener('wheel', (e) => {
-				e.preventDefault();
-				container.scrollTop += e.deltaY;
-			});
+				container.addEventListener('wheel', (e) => {
+					e.preventDefault();
+					container.scrollTop += e.deltaY;
+				});
+			}
 		});
 
 
@@ -5491,18 +5679,20 @@
 		});
 
 
-
-		document.getElementById('ask-button').addEventListener('click', function () {
-			const inputValue = document.getElementById('password-input').value;
-			if (inputValue.includes('密码') || inputValue.includes('密')) {
-				alert('我思考一下，我会在输入框告诉你答案！');
-				setTimeout(() => {
-					document.getElementById('password-input').value = '1877';
-				}, 1500);
-			} else {
-				alert('我不知道！');
-			}
-		});
+		const askBtn = document.getElementById('ask-button');
+		if (askBtn) {
+			askBtn.addEventListener('click', function () {
+				const inputValue = document.getElementById('password-input').value;
+				if (inputValue.includes('密码') || inputValue.includes('密')) {
+					alert('我思考一下，我会在输入框告诉你答案！');
+					setTimeout(() => {
+						document.getElementById('password-input').value = '1877';
+					}, 1500);
+				} else {
+					alert('我不知道！');
+				}
+			});
+		}
 
 
 
@@ -5563,301 +5753,6 @@
 
 		document.getElementById('close-modal').addEventListener('click', function () {
 			document.getElementById('password-modal').style.display = 'none';
-		});
-
-		// 创建一个新的音频对象
-		const xqzAudio = new Audio();
-
-		// 获取专辑封面元素
-		const xqzCover = document.getElementById('xqz-cover');
-
-		// 获取波形图元素
-		const xqzWaveform = document.getElementById('xqz-waveform');
-
-		// 获取播放/暂停按钮元素
-		const xqzPlayPauseBtn = document.getElementById('xqz-play-pause-btn');
-
-		// 获取上一首按钮元素
-		const xqzPrevBtn = document.getElementById('xqz-prev-btn');
-
-		// 获取下一首按钮元素
-		const xqzNextBtn = document.getElementById('xqz-next-btn');
-
-		// 获取进度条容器元素
-		const xqzProgressContainer = document.getElementById('xqz-progress-container');
-
-		// 获取进度条元素
-		const xqzProgress = document.getElementById('xqz-progress');
-
-		// 获取当前时间显示元素
-		const xqzCurrentTimeEl = document.getElementById('xqz-current-time');
-
-		// 获取总时长显示元素
-		const xqzDurationEl = document.getElementById('xqz-duration');
-
-		// 获取歌词容器元素
-		const xqzLyricsContainer = document.getElementById('xqz-lyrics');
-
-		// 获取播放列表容器元素
-		const xqzPlaylistContainer = document.getElementById('xqz-playlist');
-
-		// 当前播放歌曲的索引
-		let xqzCurrentSongIndex = 0;
-
-		// 播放状态标志
-		let xqzIsPlaying = false;
-
-		// 解析后的歌词数组
-		let xqzParsedLyrics = [];
-
-		// 歌曲列表
-		const xqzSongs = [
-			{ title: "小宇 (Live)", artist: "汪苏泷", file: "./xi.mp3", cover: "./3.jpg", lyrics: "" },
-			{ title: "像晴天像雨天", artist: "汪苏泷（最近超爱）", file: "./su.mp3", cover: "./3.jpg", lyrics: "" },
-			{ title: "地图好大", artist: "王子明（最近很喜欢）", file: "./min.MP3", cover: "./3.jpg", lyrics: "" },
-			{ title: "Princess", artist: "XMASwu吴骜", file: "./10.mp3", cover: "./41.jpg", lyrics: "./Princess(1).lrc" },
-			{ title: "我只能离开", artist: "颜人中", file: "./yan.MP3", cover: "./3.jpg", lyrics: "" },
-			{ title: "你想要的", artist: "颜人中", file: "./12.mp3", cover: "./42.webp", lyrics: "./你想要的(1).lrc" },
-			{ title: "嗜好", artist: "颜人中", file: "./144.MP3", cover: "./133.jpg", lyrics: "" },
-			{ title: "一样爱着你", artist: "BY2", file: "./yi.MP3", cover: "./3.jpg", lyrics: "" },
-			{ title: "就这样吗", artist: "BY2", file: "./jiu.MP3", cover: "./3.jpg", lyrics: "" },
-			{ title: "到此为止", artist: "连诗雅", file: "./127.MP3", cover: "./1031.webp", lyrics: "./到此为止(1).lrc" },
-
-			{ title: "爱不单行", artist: "火鸡", file: "./18.mp3", cover: "./43.webp", lyrics: "./爱不单行(1).lrc" },
-			{ title: "耿", artist: "许靖韵", file: "./6.mp3", cover: "./45.webp", lyrics: "./耿.lrc" },
-
-
-
-
-			// ... 添加更多歌曲 ...
-		];
-
-		// 加载指定索引的歌曲
-		async function xqzLoadSong(index) {
-			const song = xqzSongs[index];
-			xqzAudio.src = song.file; // 设置音频文件路径
-			xqzCover.src = song.cover; // 设置专辑封面图片路径
-			await xqzLoadLyrics(song.lyrics); // 加载歌词
-			document.querySelectorAll('#xqz-playlist li').forEach((item, i) => {
-				item.classList.toggle('active', i === index); // 切换播放列表中当前歌曲的激活状态
-			});
-		}
-
-		// 加载歌词文件
-		async function xqzLoadLyrics(lyricsFile) {
-			try {
-				const response = await fetch(lyricsFile); // 获取歌词文件
-				const lrcText = await response.text(); // 读取歌词文本
-				xqzParsedLyrics = xqzParseLRC(lrcText); // 解析歌词
-				xqzRenderLyrics(); // 渲染歌词
-			} catch (error) {
-				console.error('Error loading lyrics:', error); // 打印错误信息
-				xqzLyricsContainer.innerHTML = '<p>懒</p>'; // 显示歌词加载失败提示
-			}
-		}
-
-		// 切换播放/暂停状态
-		function xqzTogglePlay() {
-			if (xqzIsPlaying) {
-				xqzAudio.pause(); // 暂停音频
-				xqzCover.style.animationPlayState = 'paused'; // 暂停封面旋转动画
-				xqzPlayPauseBtn.textContent = '♪'; // 更新播放/暂停按钮文本
-			} else {
-				xqzAudio.play(); // 播放音频
-				xqzCover.style.animationPlayState = 'running'; // 恢复封面旋转动画
-				xqzPlayPauseBtn.textContent = '℗'; // 更新播放/暂停按钮文本
-			}
-			xqzIsPlaying = !xqzIsPlaying; // 切换播放状态
-		}
-
-		// 更新进度条
-		function xqzUpdateProgress() {
-			const { currentTime, duration } = xqzAudio; // 获取当前播放时间和总时长
-			const progressPercent = (currentTime / duration) * 100; // 计算播放进度百分比
-			xqzProgress.style.width = `${progressPercent}%`; // 更新进度条宽度
-			xqzCurrentTimeEl.textContent = xqzFormatTime(currentTime); // 更新当前时间显示
-			xqzDurationEl.textContent = xqzFormatTime(duration); // 更新总时长显示
-			xqzUpdateLyrics(currentTime); // 更新歌词显示
-		}
-
-		// 设置进度条位置
-		function xqzSetProgress(e) {
-			const width = this.clientWidth; // 获取进度条容器宽度
-			const clickX = e.offsetX; // 获取点击位置
-			const duration = xqzAudio.duration; // 获取音频总时长
-			xqzAudio.currentTime = (clickX / width) * duration; // 设置当前播放时间
-		}
-
-		// 格式化时间显示
-		function xqzFormatTime(time) {
-			const minutes = Math.floor(time / 60); // 获取分钟数
-			const seconds = Math.floor(time % 60); // 获取秒数
-			return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`; // 返回格式化后的时间字符串
-		}
-
-		// 解析歌词
-		function xqzParseLRC(lrc) {
-			const lines = lrc.trim().split('\n'); // 按行分割歌词文本
-			return lines.map(line => {
-				const parts = line.match(/\[(\d{2}):(\d{2}\.\d{2})\](.*)/); // 匹配歌词时间戳和内容
-				if (parts) {
-					return {
-						time: parseFloat(parts[1]) * 60 + parseFloat(parts[2]), // 转换时间为秒
-						text: parts[3] // 获取歌词内容
-					};
-				}
-			}).filter(Boolean); // 过滤空行
-		}
-
-		// 渲染歌词
-		function xqzRenderLyrics() {
-			xqzLyricsContainer.innerHTML = xqzParsedLyrics.map(lyric => `<p>${lyric.text}</p>`).join('');
-
-			// 初始化滚动位置
-			xqzLyricsContainer.scrollTop = 0;
-		}
-
-		// 更新歌词显示
-		function xqzUpdateLyrics(currentTime) {
-			const lyrics = Array.from(xqzLyricsContainer.children);
-			const activeLyricIndex = xqzParsedLyrics.findIndex((lyric, index) =>
-				currentTime >= lyric.time &&
-				(index === xqzParsedLyrics.length - 1 || currentTime < xqzParsedLyrics[index + 1].time)
-			);
-
-			// 更新所有歌词的样式
-			lyrics.forEach((lyricElement, index) => {
-				lyricElement.classList.remove('active');
-				if (index < activeLyricIndex) {
-					lyricElement.style.opacity = '0.5';
-				} else if (index === activeLyricIndex) {
-					lyricElement.classList.add('active');
-					lyricElement.style.opacity = '1';
-				} else {
-					lyricElement.style.opacity = '0.7';
-				}
-			});
-
-			if (activeLyricIndex > -1) {
-				const activeLyric = lyrics[activeLyricIndex];
-				const containerRect = xqzLyricsContainer.getBoundingClientRect();
-				const lyricRect = activeLyric.getBoundingClientRect();
-
-				// 计算滚动位置
-				const scrollTop = activeLyric.offsetTop - containerRect.height / 2 + lyricRect.height / 2;
-
-				// 使用平滑滚动
-				xqzLyricsContainer.scrollTo({
-					top: scrollTop,
-					behavior: 'smooth'
-				});
-			}
-		}
-
-		// 创建波形图
-		function xqzCreateWaveform() {
-			const canvas = xqzWaveform; // 获取画布元素
-			const ctx = canvas.getContext('2d'); // 获取2D绘图上下文
-			canvas.width = canvas.height = 320; // 设置画布尺寸
-			ctx.lineWidth = 2; // 设置线条宽度
-			ctx.strokeStyle = 'rgba(29, 185, 84, 0.5)'; // 设置线条颜色
-
-			function drawWave() {
-				ctx.clearRect(0, 0, canvas.width, canvas.height); // 清除画布
-				ctx.beginPath(); // 开始绘制路径
-				for (let i = 0; i < 360; i++) {
-					const angle = (i * Math.PI) / 180; // 计算角度
-					const amplitude = xqzIsPlaying ? Math.random() * 20 + 140 : 120; // 计算振幅
-					const x = 160 + amplitude * Math.cos(angle); // 计算x坐标
-					const y = 160 + amplitude * Math.sin(angle); // 计算y坐标
-					if (i === 0) ctx.moveTo(x, y); // 移动到起点
-					else ctx.lineTo(x, y); // 绘制线条
-				}
-				ctx.closePath(); // 关闭路径
-				ctx.stroke(); // 绘制路径
-				requestAnimationFrame(drawWave); // 请求下一帧动画
-			}
-
-			drawWave(); // 开始绘制波形图
-		}
-
-		// 播放上一首歌曲
-		function xqzPrevSong() {
-			xqzCurrentSongIndex = (xqzCurrentSongIndex - 1 + xqzSongs.length) % xqzSongs.length; // 计算上一首歌曲的索引
-			xqzLoadSong(xqzCurrentSongIndex); // 加载上一首歌曲
-			if (xqzIsPlaying) xqzAudio.play(); // 如果正在播放，则继续播放
-		}
-
-		// 播放下一首歌曲
-		function xqzNextSong() {
-			xqzCurrentSongIndex = (xqzCurrentSongIndex + 1) % xqzSongs.length; // 计算下一首歌曲的索引
-			xqzLoadSong(xqzCurrentSongIndex); // 加载下一首歌曲
-			if (xqzIsPlaying) xqzAudio.play(); // 如果正在播放，则继续播放
-		}
-
-		// 初始化播放列表
-		// 初始化播放列表
-		xqzSongs.forEach((song, index) => {
-			const li = document.createElement('li'); // 创建列表项元素
-			li.innerHTML = `
-		        <div class="xqz-song-info">
-		            <div class="xqz-song-title">${song.title}</div>-
-		            <div class="xqz-song-artist">${song.artist}</div>
-		        </div>
-		    `; // 设置列表项内容
-			li.addEventListener('click', () => {
-				xqzCurrentSongIndex = index; // 设置当前歌曲索引
-				xqzLoadSong(xqzCurrentSongIndex); // 加载当前歌曲
-				if (xqzIsPlaying) {
-					xqzTogglePlay(); // 暂停播放
-				}
-				xqzTogglePlay(); // 切换播放状态
-
-				// 暂停 MP3 Player Section 的播放
-				pauseMusic();
-			});
-			xqzPlaylistContainer.appendChild(li); // 将列表项添加到播放列表容器
-		});
-
-		// 事件监听
-		xqzPlayPauseBtn.addEventListener('click', xqzTogglePlay); // 播放/暂停按钮点击事件
-		xqzPrevBtn.addEventListener('click', xqzPrevSong); // 上一首按钮点击事件
-		xqzNextBtn.addEventListener('click', xqzNextSong); // 下一首按钮点击事件
-		xqzProgressContainer.addEventListener('click', xqzSetProgress); // 进度条点击事件
-		xqzAudio.addEventListener('timeupdate', xqzUpdateProgress); // 音频播放时间更新事件
-		xqzAudio.addEventListener('ended', xqzNextSong); // 音频播放结束事件
-
-		// 初始化
-		xqzLoadSong(xqzCurrentSongIndex); // 加载初始歌曲
-		xqzCreateWaveform(); // 创建波形图
-
-
-
-		gsap.from(".content", {
-			duration: 1.5,
-			opacity: 0,
-			y: 50,
-			ease: "power3.out"
-		});
-
-
-		function pauseMusic() {
-			const audio = document.getElementById('audio');
-			const musicCard = document.getElementById('musicCard');
-			const toggleButton = document.getElementById('toggleButton');
-
-			if (!audio.paused) {
-				audio.pause();
-				musicCard.classList.remove('active');
-				toggleButton.textContent = '播放';
-			}
-		}
-
-		document.addEventListener('DOMContentLoaded', function () {
-			const videos = document.querySelectorAll('#vlog video');
-			videos.forEach(video => {
-				video.addEventListener('play', pauseMusic);
-			});
 		});
 
 
@@ -5986,7 +5881,7 @@
 			}
 
 			// Fallback timer (15 seconds)
-			let fallbackTimer = setTimeout(turnPage, 15000);
+			let fallbackTimer = setTimeout(turnPage, 10000);
 
 			// Music Visualization
 			function drawMusicViz() {
@@ -6112,6 +6007,171 @@
 				window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 			}
 		})();
+	</script>
+	<script>
+		// 全新音乐播放器实现
+		const xqzSongs = [
+			{ title: "小宇 (Live)", artist: "汪苏泷", file: "./xi.mp3", cover: "./3.jpg", lyrics: "" },
+			{ title: "像晴天像雨天", artist: "汪苏泷", file: "./su.mp3", cover: "./3.jpg", lyrics: "" },
+			{ title: "地图好大", artist: "王子明", file: "./min.MP3", cover: "./3.jpg", lyrics: "" },
+			{ title: "Princess", artist: "XMASwu吴骜", file: "./10.mp3", cover: "./41.jpg", lyrics: "./Princess(1).lrc" },
+			{ title: "我只能离开", artist: "颜人中", file: "./yan.MP3", cover: "./3.jpg", lyrics: "" },
+			{ title: "你想要的", artist: "颜人中", file: "./12.mp3", cover: "./42.webp", lyrics: "./你想要的(1).lrc" },
+			{ title: "嗜好", artist: "颜人中", file: "./144.MP3", cover: "./133.jpg", lyrics: "" },
+			{ title: "一样爱着你", artist: "BY2", file: "./yi.MP3", cover: "./3.jpg", lyrics: "" },
+			{ title: "就这样吗", artist: "BY2", file: "./jiu.MP3", cover: "./3.jpg", lyrics: "" },
+			{ title: "到此为止", artist: "连诗雅", file: "./127.MP3", cover: "./1031.webp", lyrics: "./到此为止(1).lrc" },
+			{ title: "爱不单行", artist: "火鸡", file: "./18.mp3", cover: "./43.webp", lyrics: "./爱不单行(1).lrc" },
+			{ title: "耿", artist: "许靖韵", file: "./6.mp3", cover: "./45.webp", lyrics: "./耿.lrc" }
+		];
+
+		// DOM元素
+		const audio = new Audio();
+		const cover = document.getElementById('cover');
+		const playPauseBtn = document.getElementById('play-pause');
+		const prevBtn = document.getElementById('prev');
+		const nextBtn = document.getElementById('next');
+		const progressBar = document.getElementById('progress');
+		const progressContainer = document.getElementById('progress-bar');
+		const currentTimeEl = document.getElementById('current-time');
+		const durationEl = document.getElementById('duration');
+		const playlist = document.getElementById('playlist');
+
+		// 播放状态
+		let currentSongIndex = 0;
+		let isPlaying = false;
+
+		// 初始化播放器
+		function initPlayer() {
+			renderPlaylist();
+			loadSong(currentSongIndex);
+			setupEventListeners();
+		}
+
+		// 渲染播放列表
+		function renderPlaylist() {
+			playlist.innerHTML = '';
+			xqzSongs.forEach((song, index) => {
+				const li = document.createElement('li');
+				li.innerHTML = `
+					<div class="song-info">
+						<div class="song-title">${song.title}</div>
+						<div class="song-artist">${song.artist}</div>
+					</div>
+				`;
+				li.addEventListener('click', () => selectSong(index));
+				playlist.appendChild(li);
+			});
+			updatePlaylistHighlight();
+		}
+
+		// 选择歌曲
+		function selectSong(index) {
+			currentSongIndex = index;
+			loadSong(currentSongIndex);
+			playSong();
+			updatePlaylistHighlight();
+		}
+
+		// 加载歌曲
+		function loadSong(index) {
+			const song = xqzSongs[index];
+			audio.src = song.file;
+			cover.src = song.cover;
+		}
+
+		// 播放歌曲
+		function playSong() {
+			audio.play()
+				.then(() => {
+					isPlaying = true;
+					playPauseBtn.textContent = '❚❚';
+					cover.style.animationPlayState = 'running';
+				})
+				.catch(error => {
+					console.error('播放失败:', error);
+				});
+		}
+
+		// 暂停歌曲
+		function pauseSong() {
+			audio.pause();
+			isPlaying = false;
+			playPauseBtn.textContent = '▶';
+			cover.style.animationPlayState = 'paused';
+		}
+
+		// 切换播放/暂停
+		function togglePlay() {
+			if (isPlaying) {
+				pauseSong();
+			} else {
+				playSong();
+			}
+		}
+
+		// 上一首
+		function prevSong() {
+			currentSongIndex = (currentSongIndex - 1 + xqzSongs.length) % xqzSongs.length;
+			selectSong(currentSongIndex);
+		}
+
+		// 下一首
+		function nextSong() {
+			currentSongIndex = (currentSongIndex + 1) % xqzSongs.length;
+			selectSong(currentSongIndex);
+		}
+
+		// 更新播放列表高亮
+		function updatePlaylistHighlight() {
+			const items = playlist.querySelectorAll('li');
+			items.forEach((item, index) => {
+				if (index === currentSongIndex) {
+					item.classList.add('active');
+				} else {
+					item.classList.remove('active');
+				}
+			});
+		}
+
+		// 格式化时间
+		function formatTime(seconds) {
+			const mins = Math.floor(seconds / 60);
+			const secs = Math.floor(seconds % 60);
+			return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+		}
+
+		// 更新进度条
+		function updateProgress() {
+			const { currentTime, duration } = audio;
+			const progressPercent = (currentTime / duration) * 100;
+			progressBar.style.width = `${progressPercent}%`;
+			currentTimeEl.textContent = formatTime(currentTime);
+			if (!isNaN(duration)) {
+				durationEl.textContent = formatTime(duration);
+			}
+		}
+
+		// 设置进度条
+		function setProgress(e) {
+			const width = this.clientWidth;
+			const clickX = e.offsetX;
+			const duration = audio.duration;
+			audio.currentTime = (clickX / width) * duration;
+		}
+
+		// 设置事件监听器
+		function setupEventListeners() {
+			playPauseBtn.addEventListener('click', togglePlay);
+			prevBtn.addEventListener('click', prevSong);
+			nextBtn.addEventListener('click', nextSong);
+			progressContainer.addEventListener('click', setProgress);
+			audio.addEventListener('timeupdate', updateProgress);
+			audio.addEventListener('ended', nextSong);
+		}
+
+		// 初始化播放器
+		initPlayer();
 	</script>
 </body>
 
