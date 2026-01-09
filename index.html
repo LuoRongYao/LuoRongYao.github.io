@@ -289,28 +289,13 @@
 		}
 
 		header p {
-
-
-
-			width: 18ch;
-
-			white-space: nowrap;
-			overflow: hidden;
-			animation: typing 3s steps(26, end),
-				cursor-blink 0.3s step-end infinite alternate;
+			color: black;
+			font-size: 18px;
+			margin: 10px 0;
+			text-shadow: 2px 2px 4px #aaa;
 		}
 
-		@keyframes typing {
-			from {
-				width: 0;
-			}
-		}
-
-		@keyframes cursor-blink {
-			50% {
-				border-color: transparent;
-			}
-		}
+		/* 移除动画相关代码 */
 
 		.content {
 			text-align: center;
@@ -843,34 +828,7 @@
 
 		}
 
-		.song-list {
-			margin-left: 50px;
-			display: flex;
-			flex-direction: column;
-			opacity: 0;
-			animation: listFadeIn 0.5s ease forwards;
-		}
 
-		@keyframes listFadeIn {
-			to {
-				opacity: 1;
-			}
-		}
-
-		.song-list button {
-			margin-bottom: 10px;
-			background-color: #272727;
-			border: none;
-			color: hotpink;
-			text-align: center;
-			padding: 10px;
-			cursor: pointer;
-			border-radius: 20px;
-		}
-
-		.song-list button:hover {
-			background-color: #555;
-		}
 
 		.waveform {
 			display: flex;
@@ -1304,148 +1262,10 @@
 				justify-content: space-between;
 				align-items: flex-start;
 			}
-
-			.xqz-player {
-				width: 60%;
-			}
-
-			.xqz-playlist {
-				width: 35%;
-				margin-top: 0;
-			}
 		}
 
 
-		.xqz-player {
-			flex: 1;
-			padding: 40px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 100%;
-			max-width: 400px;
-		}
 
-		.xqz-cover-container {
-			position: relative;
-			width: 240px;
-			height: 240px;
-			margin-bottom: 40px;
-		}
-
-		.xqz-cover {
-			width: 100%;
-			height: 100%;
-			border-radius: 50%;
-			object-fit: cover;
-			box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-			animation: rotate 20s linear infinite;
-			animation-play-state: paused;
-		}
-
-		@keyframes rotate {
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-
-		.xqz-waveform {
-			position: absolute;
-			top: -40px;
-			left: -40px;
-			right: -40px;
-			border-radius: 20%;
-		}
-
-		.xqz-controls {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 30px;
-		}
-
-		.xqz-control-btn {
-			border: none;
-			color: #fff;
-			font-size: 24px;
-			width: 30px;
-			height: 40px;
-			border-radius: 50%;
-			margin: 0 15px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.xqz-control-btn:hover {
-			background: rgba(255, 255, 255, 0.3);
-			transform: scale(1.1);
-		}
-
-		.xqz-play-pause-btn {
-			width: 50px;
-			height: 50px;
-			font-size: 30px;
-		}
-
-		.xqz-progress-container {
-			width: 100%;
-			height: 5px;
-			background-color: black;
-			border-radius: 5px;
-			cursor: pointer;
-			margin-bottom: 20px;
-			margin-top: -20px;
-		}
-
-		.xqz-progress {
-			width: 0;
-			height: 100%;
-			background-color: #1db954;
-			border-radius: 5px;
-			transition: width 0.1s linear;
-
-		}
-
-		.xqz-time-info {
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-			font-size: 14px;
-			margin-bottom: 30px;
-			margin-top: -20px;
-		}
-
-		.xqz-lyrics {
-			height: 100px;
-			width: 100%;
-			overflow-y: auto;
-			overflow-x: hidden;
-			position: relative;
-			margin-top: -40px;
-			scrollbar-width: none;
-			-ms-overflow-style: none;
-			font-size: 14px;
-		}
-
-		.xqz-lyrics::-webkit-scrollbar {
-			display: none;
-			/* 用于 Chrome, Safari 和 Opera */
-		}
-
-		.xqz-lyrics p {
-			margin: 10px 0;
-			transition: all 0.3s ease;
-			opacity: 0.7;
-		}
-
-		.xqz-lyrics p.active {
-			color: #1db954;
-			transform: scale(1.1);
-			opacity: 1;
-		}
 
 
 		/* 全新音乐播放器样式 */
@@ -1612,6 +1432,7 @@
 			from {
 				transform: rotate(0deg);
 			}
+
 			to {
 				transform: rotate(360deg);
 			}
@@ -1716,6 +1537,7 @@
 			from {
 				transform: rotate(0deg);
 			}
+
 			to {
 				transform: rotate(360deg);
 			}
@@ -2356,21 +2178,6 @@
 			}
 		}
 
-		@font-face {
-			font-family: 'MaoBiTi';
-			src: url('./3.woff2') format('woff2');
-		}
-
-		.maobi-text {
-			font-family: 'MaoBiTi', 'SimSun', serif;
-			font-size: 15px;
-			color: #2196F3;
-			width: 370px;
-			margin-left: 20px;
-
-
-
-		}
 
 		.floating {
 			animation: float 4s ease-in-out infinite;
@@ -3252,12 +3059,123 @@
 				font-size: 1.4rem;
 			}
 		}
+
+		/* Rotation Icon Animation */
+		.rotate-icon-link {
+			text-decoration: none;
+			display: inline-block;
+			margin: 0 740px;
+			/* Increased spacing further */
+			width: 40px;
+			/* Smaller container */
+			height: 40px;
+		}
+
+		.rotate-icon-link:hover {
+			background-color: transparent !important;
+			/* Override global a:hover background */
+		}
+
+		.icon-content {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.main-icon,
+		.hover-icon {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: opacity 0.3s ease;
+			width: 100%;
+			height: 100%;
+		}
+
+		.main-icon {
+			opacity: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.douyin-icon {
+			font-size: 26px;
+			/* Reduced icon size to 26px */
+			background: linear-gradient(to top, #4facfe 0%, #00f2fe 100%);
+			/* Light Blue Gradient */
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			transform: translateY(4px);
+			/* Move down 5px */
+		}
+
+		.kugou-text {
+			font-family: 'Arial Black', Arial, sans-serif;
+			font-weight: 900;
+			background: linear-gradient(to top, #4facfe 0%, #00f2fe 100%);
+			/* Unified Light Blue Gradient */
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 32px;
+			/* Matched smaller size */
+			line-height: 1;
+			font-style: italic;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding-top: 4px;
+			/* Slight offset for visual centering */
+		}
+
+		.hover-icon {
+			opacity: 0;
+			color: #555;
+			font-size: 28px;
+			/* Scaled down hover icon */
+			transform: rotate(0deg);
+			background: transparent;
+			box-shadow: none;
+			text-shadow: none;
+		}
+
+		/* Hover Effects */
+		.rotate-icon-link:hover .icon-content {
+			transform: rotate(360deg);
+		}
+
+		.rotate-icon-link:hover .main-icon {
+			opacity: 0;
+		}
+
+		.rotate-icon-link:hover .hover-icon {
+			opacity: 1;
+		}
+
+		.gratitude-text {
+			font-family: 'MaoBiTi', 'SimSun', serif;
+			font-size: 18px;
+			/* Smaller font size */
+			color: #333;
+			margin: 15px 0;
+			text-shadow: none;
+			/* Removed shadow */
+			letter-spacing: 1px;
+		}
 	</style>
 </head>
 
 <body>
 
-	
+
 
 
 	<div class="toggle-btn" onclick="toggleNav()">
@@ -3268,7 +3186,7 @@
 			<li><a href="#treehouse"><i class="fas fa-tree"></i> 最近在想啥</a></li>
 			<li><a href="#tourist-photos"><i class="fas fa-camera"></i> 最近拍了啥</a></li>
 
-			
+
 			<li><a href="#music-matrix"><i class="fas fa-music"></i> 最近在听啥</a></li>
 
 			<li><a href="#interesting"><i class="fas fa-laugh"></i> 最近遇到啥</a></li>
@@ -3290,18 +3208,27 @@
 		<img src="./3.jpg" alt="Profile Picture" class="profile-picture animate__animated animate__fadeIn">
 
 		<h1 class="unique-typing-effect"><span style="color: black;"> xianggugu</span></h1>
-		<p class="maobi-text">出去玩是唯一重要的事,不拥有任何人，不依赖任何人</p>
+		<p class="gratitude-text">感谢那个努力替自己实现愿望的我！</p>
 		<div class="social-links">
-			<a href="https://v.douyin.com/iDqSyuhp/">
-				<div class="animated-image">
-					<img src="./抖音.png" alt="WeChat">
-
+			<a href="https://v.douyin.com/iDqSyuhp/" class="rotate-icon-link">
+				<div class="icon-content">
+					<div class="main-icon douyin-icon">
+						<i class="fa-brands fa-tiktok"></i>
+					</div>
+					<div class="hover-icon">
+						<i class="fas fa-arrow-right"></i>
+					</div>
 				</div>
 			</a>
-			<a href="https://t1.kugou.com/gcid_3zglrothz1z04d?src_cid=3zglrothz1z04d&uid=873051182&chl=weibo&iszlist=1">
-				<div class="animated-image">
-					<img src="./酷狗音乐.png" alt="GitHub">
-
+			<a href="https://t1.kugou.com/gcid_3zglrothz1z04d?src_cid=3zglrothz1z04d&uid=873051182&chl=weibo&iszlist=1"
+				class="rotate-icon-link">
+				<div class="icon-content">
+					<div class="main-icon">
+						<span class="kugou-text">K</span>
+					</div>
+					<div class="hover-icon">
+						<i class="fas fa-arrow-right"></i>
+					</div>
 				</div>
 			</a>
 		</div>
@@ -3340,16 +3267,16 @@
 				</div>
 				<div class="article-content">
 					<p>2026了耶！</i></p>
-			
+
 				</div>
 				<div class="article-footer">
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
 					<span class="source">来自Web版</span>
 				</div>
 			</div>
@@ -3369,16 +3296,16 @@
 				</div>
 				<div class="article-content">
 					<p>新年快乐！去完成对我自己的承诺了！希望26年一切顺利吧，明年见。</i></p>
-			
+
 				</div>
 				<div class="article-footer">
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
 					<span class="source">来自Web版</span>
 				</div>
 			</div>
@@ -3398,16 +3325,16 @@
 				</div>
 				<div class="article-content">
 					<p>你的名字中国分湖见。</i></p>
-			
+
 				</div>
 				<div class="article-footer">
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
 					<span class="source">来自Web版</span>
 				</div>
 			</div>
@@ -4896,60 +4823,6 @@
 				<i class="fa-solid fa-angles-down fa-bounce" style="color: black;"></i>
 			</button>
 
-			<div class="article" data-index="6">
-				<span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
-				<div class="article-header">
-					<div class="header-left">
-						<div class="avatar-container">
-							<img src="./3.jpg" alt="Avatar" class="avatar">
-							<div class="avatar-icon">
-								<i class="fa-solid fa-bolt fa-fade"></i>
-							</div>
-						</div>
-						<span class="author">xianggugu</span>
-					</div>
-					<span class="date">2024年9月30日</span>
-				</div>
-				<div class="article-content">
-					<p>走，我是该开心还是难过呢，谁又知道呢，珍重<span style="padding: 15px;">再见。</span><i
-							class="fa-solid fa-person-walking-luggage fa-beat" style="font-size: 20px;"></i></p>
-					<audio controls>
-						<source src="./145.MP3" type="audio/mpeg">
-						您的浏览器不支持 audio 元素。
-					</audio>
-				</div>
-				<div class="article-footer">
-
-
-
-					<span class="source">来自Web版</span>
-				</div>
-			</div>
-			<div class="article" data-index="7">
-				<span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
-				<div class="article-header">
-					<div class="header-left">
-						<div class="avatar-container">
-							<img src="./3.jpg" alt="Avatar" class="avatar">
-							<div class="avatar-icon">
-								<i class="fa-solid fa-bolt fa-fade"></i>
-							</div>
-						</div>
-						<span class="author">xianggugu</span>
-					</div>
-					<span class="date">2024年9月28日</span>
-				</div>
-				<div class="article-content">
-					<p>I don't want to be someone's backup option，So I turn around and leave，embracing my freedom-loving
-						self。<i class="fa-solid fa-person-running fa-beat" style="font-size: 20px;"></i></p>
-				</div>
-				<div class="article-footer">
-
-
-
-					<span class="source">来自Web版</span>
-				</div>
-			</div>
 			<div class="article" data-index="8">
 				<span class="mirrored-tag"><i class="fa-solid fa-tag"></i></span>
 				<div class="article-header">
@@ -5219,7 +5092,7 @@
 			<!-- 其他文章重复上述结构 -->
 		</div>
 	</div>
-	
+
 
 	<div id="tourist-photos" class="content blurred-border">
 		<button class="title-button" aria-label="我的小屋">
@@ -5332,7 +5205,7 @@
 				style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
 
 		</div>
-		
+
 
 
 
@@ -5444,7 +5317,7 @@
 			<div class="glow"></div>
 			<div class="super-glow"></div>
 		</button>
-		<p style="text-align: center; margin-bottom: 20px;font-size: 15px;">如果我要结婚我就把它买下来，如果不结婚就等我想在哪养老就在哪买。</p>
+
 		<iframe
 			src="https://yun.kujiale.com/pub/bim/tool-page/pure-design-viewer?designid=3FO3KUSBAUL9&from=yuntu_tool&internalRefer=desktopTopBarQRCode"
 			allowfullscreen></iframe>
@@ -6005,15 +5878,15 @@
 	<script>
 		// 全新音乐播放器实现
 		const xqzSongs = [
-			{ title: "小宇 (Live)", artist: "汪苏泷", file: "./xi.mp3", cover: "./3.jpg", lyrics: "" },
+
 			{ title: "像晴天像雨天", artist: "汪苏泷", file: "./su.mp3", cover: "./3.jpg", lyrics: "" },
 			{ title: "地图好大", artist: "王子明", file: "./min.MP3", cover: "./3.jpg", lyrics: "" },
 			{ title: "Princess", artist: "XMASwu吴骜", file: "./10.mp3", cover: "./41.jpg", lyrics: "./Princess(1).lrc" },
 			{ title: "我只能离开", artist: "颜人中", file: "./yan.MP3", cover: "./3.jpg", lyrics: "" },
-			{ title: "你想要的", artist: "颜人中", file: "./12.mp3", cover: "./42.webp", lyrics: "./你想要的(1).lrc" },
-			{ title: "嗜好", artist: "颜人中", file: "./144.MP3", cover: "./133.jpg", lyrics: "" },
+
+
 			{ title: "一样爱着你", artist: "BY2", file: "./yi.MP3", cover: "./3.jpg", lyrics: "" },
-			{ title: "就这样吗", artist: "BY2", file: "./jiu.MP3", cover: "./3.jpg", lyrics: "" },
+
 			{ title: "到此为止", artist: "连诗雅", file: "./127.MP3", cover: "./1031.webp", lyrics: "./到此为止(1).lrc" },
 			{ title: "爱不单行", artist: "火鸡", file: "./18.mp3", cover: "./43.webp", lyrics: "./爱不单行(1).lrc" },
 			{ title: "耿", artist: "许靖韵", file: "./6.mp3", cover: "./45.webp", lyrics: "./耿.lrc" }
